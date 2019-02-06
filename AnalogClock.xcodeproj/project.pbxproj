@@ -14,6 +14,11 @@
 		A431F6C922090BA90052C848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A431F6C722090BA90052C848 /* LaunchScreen.storyboard */; };
 		A431F6D422090BA90052C848 /* AnalogClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6D322090BA90052C848 /* AnalogClockTests.swift */; };
 		A431F6DF22090BA90052C848 /* AnalogClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6DE22090BA90052C848 /* AnalogClockUITests.swift */; };
+		A431F6EE220967E80052C848 /* ClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6ED220967E80052C848 /* ClockHand.swift */; };
+		A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */; };
+		A4B82320220A613E00161F3D /* MonthNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8231F220A613E00161F3D /* MonthNames.swift */; };
+		A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82321220A8F9700161F3D /* WeekNames.swift */; };
+		A4B82325220AB66B00161F3D /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82324220AB66B00161F3D /* General.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		A431F6DA22090BA90052C848 /* AnalogClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnalogClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A431F6DE22090BA90052C848 /* AnalogClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockUITests.swift; sourceTree = "<group>"; };
 		A431F6E022090BA90052C848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A431F6ED220967E80052C848 /* ClockHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHand.swift; sourceTree = "<group>"; };
+		A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeAndDate.swift; sourceTree = "<group>"; };
+		A4B8231F220A613E00161F3D /* MonthNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNames.swift; sourceTree = "<group>"; };
+		A4B82321220A8F9700161F3D /* WeekNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNames.swift; sourceTree = "<group>"; };
+		A4B82324220AB66B00161F3D /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		A4B82326220AB84100161F3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,7 @@
 		A431F6B222090BA70052C848 = {
 			isa = PBXGroup;
 			children = (
+				A4B82326220AB84100161F3D /* README.md */,
 				A431F6BD22090BA70052C848 /* AnalogClock */,
 				A431F6D222090BA90052C848 /* AnalogClockTests */,
 				A431F6DD22090BA90052C848 /* AnalogClockUITests */,
@@ -97,6 +109,7 @@
 		A431F6BD22090BA70052C848 /* AnalogClock */ = {
 			isa = PBXGroup;
 			children = (
+				A431F6EC220967B40052C848 /* Definitions */,
 				A431F6BE22090BA70052C848 /* AppDelegate.swift */,
 				A431F6C022090BA70052C848 /* ViewController.swift */,
 				A431F6C222090BA70052C848 /* Main.storyboard */,
@@ -123,6 +136,34 @@
 				A431F6E022090BA90052C848 /* Info.plist */,
 			);
 			path = AnalogClockUITests;
+			sourceTree = "<group>";
+		};
+		A431F6EC220967B40052C848 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				A4B82323220A932700161F3D /* CurrentTimeAndDate */,
+				A431F6ED220967E80052C848 /* ClockHand.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		A4B8231E220A611F00161F3D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A4B8231F220A613E00161F3D /* MonthNames.swift */,
+				A4B82321220A8F9700161F3D /* WeekNames.swift */,
+				A4B82324220AB66B00161F3D /* General.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		A4B82323220A932700161F3D /* CurrentTimeAndDate */ = {
+			isa = PBXGroup;
+			children = (
+				A4B8231E220A611F00161F3D /* Constants */,
+				A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */,
+			);
+			path = CurrentTimeAndDate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,7 +297,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */,
 				A431F6C122090BA70052C848 /* ViewController.swift in Sources */,
+				A4B82320220A613E00161F3D /* MonthNames.swift in Sources */,
+				A431F6EE220967E80052C848 /* ClockHand.swift in Sources */,
+				A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */,
+				A4B82325220AB66B00161F3D /* General.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
