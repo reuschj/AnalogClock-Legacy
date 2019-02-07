@@ -73,7 +73,7 @@ public class CurrentTimeAndDate {
     public var hour24: Int? {
         return dateComponents.hour
     }
-    public var amPM: String? {
+    public var period: String? {
         guard let hour = dateComponents.hour else { return nil }
         return hour >= 0 && hour < 12 ? "AM" : "PM"
     }
@@ -82,6 +82,10 @@ public class CurrentTimeAndDate {
     }
     public var second: Int? {
         return dateComponents.second
+    }
+    public var tickTock: TickTock? {
+        guard let second = dateComponents.second else { return nil }
+        return second % 2 == 0 ? .tick : .tock
     }
     
     public init() {
@@ -98,4 +102,12 @@ public class CurrentTimeAndDate {
         date = Date()
     }
     
+}
+
+/**
+ Enum holding tick tock states (left/right of clock pendulum)
+ */
+public enum TickTock: String {
+    case tick
+    case tock
 }
