@@ -19,7 +19,7 @@
 		A4B82320220A613E00161F3D /* MonthNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8231F220A613E00161F3D /* MonthNames.swift */; };
 		A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82321220A8F9700161F3D /* WeekNames.swift */; };
 		A4B82325220AB66B00161F3D /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82324220AB66B00161F3D /* General.swift */; };
-		A4B82329220BF13700161F3D /* HourHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82328220BF13700161F3D /* HourHand.swift */; };
+		A4B82329220BF13700161F3D /* UIClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82328220BF13700161F3D /* UIClockHand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +59,7 @@
 		A4B82321220A8F9700161F3D /* WeekNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNames.swift; sourceTree = "<group>"; };
 		A4B82324220AB66B00161F3D /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		A4B82326220AB84100161F3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		A4B82328220BF13700161F3D /* HourHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourHand.swift; sourceTree = "<group>"; };
+		A4B82328220BF13700161F3D /* UIClockHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClockHand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,7 +172,7 @@
 		A4B82327220BF11500161F3D /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A4B82328220BF13700161F3D /* HourHand.swift */,
+				A4B82328220BF13700161F3D /* UIClockHand.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -310,7 +310,7 @@
 			files = (
 				A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */,
 				A431F6C122090BA70052C848 /* ViewController.swift in Sources */,
-				A4B82329220BF13700161F3D /* HourHand.swift in Sources */,
+				A4B82329220BF13700161F3D /* UIClockHand.swift in Sources */,
 				A4B82320220A613E00161F3D /* MonthNames.swift in Sources */,
 				A431F6EE220967E80052C848 /* ClockHand.swift in Sources */,
 				A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */,

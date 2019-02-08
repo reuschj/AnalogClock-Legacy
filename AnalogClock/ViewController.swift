@@ -16,6 +16,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var tickLabel: UILabel!
     @IBOutlet weak var tockLable: UILabel!
     
+    // Clock hands
+    @IBOutlet weak var hourHand: UIClockHand!
+    @IBOutlet weak var minuteHand: UIClockHand!
+    @IBOutlet weak var secondHand: UIClockHand!
+    
+    
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate = CurrentTimeAndDate()
     
@@ -23,14 +29,20 @@ class ViewController: UIViewController {
     var timer: Timer!
     
     // Temporary for testing
-    var hourHand: ClockHand! = nil
-    var minuteHand: ClockHand! = nil
-    var secondHand: ClockHand! = nil
+    var hourHandController: ClockHand! = nil
+    var minuteHandController: ClockHand! = nil
+    var secondHandController: ClockHand! = nil
     
     // Temporary function to get a test time readout... sets to the temp label and prints
     func getTestTimeReadout() {
+        
+        // Hand rotation test
+        hourHand.setRotation(to: self.hourHandController.rotationRadians)
+        minuteHand.setRotation(to: self.minuteHandController.rotationRadians)
+        secondHand.setRotation(to: self.secondHandController.rotationRadians)
+        
         let testTimeReadout = "\(self.time.hour12 ?? 0):\(self.time.minute ?? 0):\(self.time.second ?? 0) \(self.time.period ?? "")"
-        let testTimeReadout2 = "Hours: \(self.hourHand.rotation?.rounded() ?? 0), Minutes: \(self.minuteHand.rotation?.rounded() ?? 0), Seconds: \(self.secondHand.rotation?.rounded() ?? 0)"
+        let testTimeReadout2 = "Hours: \(self.hourHandController.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(self.minuteHandController.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(self.secondHandController.rotation?.rounded() ?? 0)\u{00B0}"
         let tickTock = self.time.tickTock
         if let tickTock = tickTock {
             switch tickTock {
@@ -54,9 +66,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // Temporary for testing
-        self.hourHand = ClockHand(asType: .hour, withTime: time)
-        self.minuteHand = ClockHand(asType: .minute, withTime: time)
-        self.secondHand = ClockHand(asType: .second, withTime: time)
+        self.hourHandController = ClockHand(asType: .hour, withTime: time)
+        self.minuteHandController = ClockHand(asType: .minute, withTime: time)
+        self.secondHandController = ClockHand(asType: .second, withTime: time)
         
         // Sets the label on load
         self.getTestTimeReadout()
