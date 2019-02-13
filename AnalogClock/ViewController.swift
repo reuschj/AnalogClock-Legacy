@@ -10,40 +10,35 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    // Temporary label to show the test string printout of the time
-    @IBOutlet weak var tempTimeDisplay: UILabel!
-    @IBOutlet weak var tempTimeDisplay2: UILabel!
-    @IBOutlet weak var tickLabel: UILabel!
-    @IBOutlet weak var tockLable: UILabel!
-    
-    // Clock hands
-    @IBOutlet weak var hourHand: UIClockHand!
-    @IBOutlet weak var minuteHand: UIClockHand!
-    @IBOutlet weak var secondHand: UIClockHand!
-    
-    
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate = CurrentTimeAndDate()
     
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
-    // Temporary for testing
-    var hourHandController: ClockHand! = nil
-    var minuteHandController: ClockHand! = nil
-    var secondHandController: ClockHand! = nil
+    // Clock hands
+    @IBOutlet weak var hourHand: UIClockHand!
+    @IBOutlet weak var minuteHand: UIClockHand!
+    @IBOutlet weak var secondHand: UIClockHand!
+    
+    // Temporary label to show the test string printout of the time
+    @IBOutlet weak var tempTimeDisplay: UILabel!
+    @IBOutlet weak var tempTimeDisplay2: UILabel!
+    @IBOutlet weak var tickLabel: UILabel!
+    @IBOutlet weak var tockLable: UILabel!
     
     // Temporary function to get a test time readout... sets to the temp label and prints
     func getTestTimeReadout() {
         
         // Hand rotation test
-        hourHand.setRotation(to: self.hourHandController.rotationRadians)
-        minuteHand.setRotation(to: self.minuteHandController.rotationRadians)
-        secondHand.setRotation(to: self.secondHandController.rotationRadians)
+        hourHand.setRotation(to: hourHand.controller?.rotationRadians)
+        minuteHand.setRotation(to: minuteHand.controller?.rotationRadians)
+        secondHand.setRotation(to: secondHand.controller?.rotationRadians)
         
-        let testTimeReadout = "\(self.time.hour12 ?? 0):\(self.time.minute ?? 0):\(self.time.second ?? 0) \(self.time.period ?? "")"
-        let testTimeReadout2 = "Hours: \(self.hourHandController.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(self.minuteHandController.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(self.secondHandController.rotation?.rounded() ?? 0)\u{00B0}"
-        let tickTock = self.time.tickTock
+        let testTimeReadout = "\(time.hour12 ?? 0):\(time.minute ?? 0):\(time.second ?? 0) \(time.period ?? "")"
+        let testTimeReadout2 = "Hours: \(hourHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(minuteHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(secondHand.controller?.rotation?.rounded() ?? 0)\u{00B0}"
+        
+        let tickTock = time.tickTock
         if let tickTock = tickTock {
             switch tickTock {
             case .tick:
@@ -61,22 +56,35 @@ class ViewController: UIViewController {
         print(testTimeReadout2)
     }
     
+    // Sets the clock hands with clock hand controllers
+    private func setClockHandControllers(withTime: CurrentTimeAndDate) -> Void {
+        hourHand.controller = ClockHandController(asType: .hour, withTime: time)
+        minuteHand.controller = ClockHandController(asType: .minute, withTime: time)
+        secondHand.controller = ClockHandController(asType: .second, withTime: time)
+    }
+    
+    // Starts up the timer for the view controller
+    private func startTimer() -> Void {
+        
+        // Sets the label on load
+        actionOnTimer()
+        
+        timer = Timer.scheduledTimer(withTimeInterval: defaultTickInterval, repeats: true, block: { [weak self] timer in
+            self?.actionOnTimer()
+        })
+    }
+    
+    // This maps to method/methods to run on timer
+    private func actionOnTimer() -> Void {
+        // TODO: Replace this
+        getTestTimeReadout()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Temporary for testing
-        self.hourHandController = ClockHand(asType: .hour, withTime: time)
-        self.minuteHandController = ClockHand(asType: .minute, withTime: time)
-        self.secondHandController = ClockHand(asType: .second, withTime: time)
-        
-        // Sets the label on load
-        self.getTestTimeReadout()
-        
-        // Sets up the timer on load
-        self.timer = Timer.scheduledTimer(withTimeInterval: defaultTickInterval, repeats: true, block: { [weak self] timer in
-            self?.getTestTimeReadout()
-        })
+        setClockHandControllers(withTime: time)
+        startTimer()
     }
         
 

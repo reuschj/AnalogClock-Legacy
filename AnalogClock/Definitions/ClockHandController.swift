@@ -1,5 +1,5 @@
 //
-//  ClockHand.swift
+//  ClockHandController.swift
 //  AnalogClock
 //
 //  Created by Justin Reusch on 2/5/19.
@@ -9,11 +9,11 @@
 import Foundation
 
 /**
- A structure that holds type and rotation of clock hand
+ A class that holds type and rotation of clock hand
  */
-struct ClockHand {
+class ClockHandController {
     let type: ClockHandType
-    private let time: CurrentTimeAndDate
+    let time: CurrentTimeAndDate
     var rotation: Double? {
         // Unwrap time elements
         guard let hour24 = time.hour24 else { return nil }
@@ -48,14 +48,4 @@ struct ClockHand {
         self.type = type
         self.time = time
     }
-}
-
-/**
- Enum holding types of clock hands
- */
-enum ClockHandType: String {
-    case twentyFourHour
-    case hour
-    case minute
-    case second
 }

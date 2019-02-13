@@ -10,6 +10,19 @@ import UIKit
 
 class UIClockHand: UIImageView {
     
+    var controller: ClockHandController? = nil
+    var type: ClockHandType? {
+        return controller?.type
+    }
+    var time: CurrentTimeAndDate? {
+        return controller?.time
+    }
+    
+    convenience init(image: UIImage?, controller: ClockHandController?) {
+        self.init(image: image)
+        self.controller = controller
+    }
+    
     func setRotation(to rotation: Double?) {
         guard let rotation = rotation else { return }
         transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
