@@ -61,6 +61,11 @@ class ViewController: UIViewController {
         hourHand.controller = ClockHandController(asType: .hour, withTime: time)
         minuteHand.controller = ClockHandController(asType: .minute, withTime: time)
         secondHand.controller = ClockHandController(asType: .second, withTime: time)
+        
+        let clockPivot = 0.85
+        hourHand.setClockHandPivot(to: clockPivot)
+        minuteHand.setClockHandPivot(to: clockPivot)
+        secondHand.setClockHandPivot(to: clockPivot)
     }
     
     // Starts up the timer for the view controller

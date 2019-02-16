@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ UI Image View to control clock hands
+ */
 class UIClockHand: UIImageView {
     
     var controller: ClockHandController? = nil
@@ -23,14 +26,18 @@ class UIClockHand: UIImageView {
         self.controller = controller
     }
     
+    /**
+     Sets rotation for clock hand
+     */
     func setRotation(to rotation: Double?) {
         guard let rotation = rotation else { return }
         transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
     }
     
+    /**
+     Sets anchor point for clock hand pivot
+     */
     func setAnchor(to newAnchorPoint: CGPoint) {
-        
-        // TODO: Refind this...
         
         let currentWidth = bounds.size.width
         let currentHeight = bounds.size.height
@@ -52,10 +59,21 @@ class UIClockHand: UIImageView {
         
         layer.position = position
         layer.anchorPoint = newAnchorPoint
+
     }
     
-    // TODO: setPosition method
-    
-    // TODO: setSize method
+    /**
+     Sets anchor point for clock hand pivot
+     */
+    func setClockHandPivot(to newYAnchor: Double = 0.85) {
+        var correctedYAnchor = newYAnchor
+        if newYAnchor < 0 {
+            correctedYAnchor = 0
+        }
+        if newYAnchor > 1 {
+            correctedYAnchor = 1
+        }
+        setAnchor(to: CGPoint(x: 0.5, y: correctedYAnchor))
+    }
     
 }
