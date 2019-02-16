@@ -23,6 +23,7 @@
 		A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41452213E91300D2D277 /* ClockHandType.swift */; };
 		A4BE414822176C5200D2D277 /* UIClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414722176C5200D2D277 /* UIClock.swift */; };
 		A4BE414A2217CDAB00D2D277 /* UIClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41492217CDAB00D2D277 /* UIClockFace.swift */; };
+		A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		A4BE41452213E91300D2D277 /* ClockHandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandType.swift; sourceTree = "<group>"; };
 		A4BE414722176C5200D2D277 /* UIClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClock.swift; sourceTree = "<group>"; };
 		A4BE41492217CDAB00D2D277 /* UIClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClockFace.swift; sourceTree = "<group>"; };
+		A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padTimeUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +119,6 @@
 		A431F6BD22090BA70052C848 /* AnalogClock */ = {
 			isa = PBXGroup;
 			children = (
-				A4B82327220BF11500161F3D /* UI */,
 				A431F6EC220967B40052C848 /* Definitions */,
 				A431F6BE22090BA70052C848 /* AppDelegate.swift */,
 				A431F6C022090BA70052C848 /* ViewController.swift */,
@@ -150,9 +151,9 @@
 		A431F6EC220967B40052C848 /* Definitions */ = {
 			isa = PBXGroup;
 			children = (
+				A4B82327220BF11500161F3D /* UI */,
+				A4BE414E2217DC3500D2D277 /* ClockHandController */,
 				A4B82323220A932700161F3D /* CurrentTimeAndDate */,
-				A431F6ED220967E80052C848 /* ClockHandController.swift */,
-				A4BE41452213E91300D2D277 /* ClockHandType.swift */,
 			);
 			path = Definitions;
 			sourceTree = "<group>";
@@ -170,6 +171,7 @@
 		A4B82323220A932700161F3D /* CurrentTimeAndDate */ = {
 			isa = PBXGroup;
 			children = (
+				A4BE414B2217D3D500D2D277 /* Utilities */,
 				A4B8231E220A611F00161F3D /* Constants */,
 				A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */,
 			);
@@ -184,6 +186,23 @@
 				A4BE41492217CDAB00D2D277 /* UIClockFace.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A4BE414B2217D3D500D2D277 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A4BE414E2217DC3500D2D277 /* ClockHandController */ = {
+			isa = PBXGroup;
+			children = (
+				A431F6ED220967E80052C848 /* ClockHandController.swift */,
+				A4BE41452213E91300D2D277 /* ClockHandType.swift */,
+			);
+			path = ClockHandController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */,
+				A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */,
 				A431F6C122090BA70052C848 /* ViewController.swift in Sources */,
 				A4B82329220BF13700161F3D /* UIClockHand.swift in Sources */,
 				A4B82320220A613E00161F3D /* MonthNames.swift in Sources */,

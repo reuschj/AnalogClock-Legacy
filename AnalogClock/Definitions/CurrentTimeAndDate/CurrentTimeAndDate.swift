@@ -80,8 +80,16 @@ public class CurrentTimeAndDate {
     public var minute: Int? {
         return dateComponents.minute
     }
+    public var paddedMinute: String? {
+        guard let minute = minute else { return nil }
+        return padTimeUnit(minute)
+    }
     public var second: Int? {
         return dateComponents.second
+    }
+    public var paddedSecond: String? {
+        guard let second = second else { return nil }
+        return padTimeUnit(second)
     }
     public var tickTock: TickTock? {
         guard let second = dateComponents.second else { return nil }

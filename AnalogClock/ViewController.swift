@@ -28,14 +28,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var tockLable: UILabel!
     
     // Temporary function to get a test time readout... sets to the temp label and prints
-    func getTestTimeReadout() {
+    func getTimeReadout() {
         
         // Hand rotation test
         hourHand.setRotation(to: hourHand.controller?.rotationRadians)
         minuteHand.setRotation(to: minuteHand.controller?.rotationRadians)
         secondHand.setRotation(to: secondHand.controller?.rotationRadians)
         
-        let testTimeReadout = "\(time.hour12 ?? 0):\(time.minute ?? 0):\(time.second ?? 0) \(time.period ?? "")"
+        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period ?? "")"
         let testTimeReadout2 = "Hours: \(hourHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(minuteHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(secondHand.controller?.rotation?.rounded() ?? 0)\u{00B0}"
         
         let tickTock = time.tickTock
@@ -82,7 +82,7 @@ class ViewController: UIViewController {
     // This maps to method/methods to run on timer
     private func actionOnTimer() -> Void {
         // TODO: Replace this
-        getTestTimeReadout()
+        getTimeReadout()
     }
     
     
