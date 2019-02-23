@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
+    @IBOutlet var clock: UIClock!
+    
     // Clock hands
     @IBOutlet weak var hourHand: UIClockHand!
     @IBOutlet weak var minuteHand: UIClockHand!
@@ -90,6 +92,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setClockHandControllers(withTime: time)
         startTimer()
+        
+        // Testing out this initializer
+        clock = UIClock(time: time, hourHand: hourHand, minuteHand: minuteHand, secondHand: secondHand)
+        
     }
         
 

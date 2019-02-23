@@ -37,18 +37,18 @@
                                                     <constraint firstAttribute="width" secondItem="bLU-33-4RL" secondAttribute="height" multiplier="76:85" id="JiW-h9-LJe"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Second" translatesAutoresizingMaskIntoConstraints="NO" id="LnS-69-dvy" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
-                                                <rect key="frame" x="141" y="94" width="93" height="160"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="160" id="HdX-ra-UPX"/>
-                                                    <constraint firstAttribute="width" secondItem="LnS-69-dvy" secondAttribute="height" multiplier="32:55" id="c0H-f5-orD"/>
-                                                </constraints>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Minute" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-g0-cEU" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
                                                 <rect key="frame" x="141" y="94" width="93" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="kR1-fO-U5S"/>
                                                     <constraint firstAttribute="width" secondItem="f5y-g0-cEU" secondAttribute="height" multiplier="32:55" id="xBc-2a-37A"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Second" translatesAutoresizingMaskIntoConstraints="NO" id="LnS-69-dvy" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
+                                                <rect key="frame" x="141" y="94" width="93" height="160"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="160" id="HdX-ra-UPX"/>
+                                                    <constraint firstAttribute="width" secondItem="LnS-69-dvy" secondAttribute="height" multiplier="32:55" id="c0H-f5-orD"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -166,6 +166,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="clock" destination="BxI-rU-XZi" id="Ewc-lJ-ohk"/>
                         <outlet property="hourHand" destination="bLU-33-4RL" id="eK2-ad-OuM"/>
                         <outlet property="minuteHand" destination="f5y-g0-cEU" id="sec-Ad-D8P"/>
                         <outlet property="secondHand" destination="LnS-69-dvy" id="TiD-nQ-EPA"/>
