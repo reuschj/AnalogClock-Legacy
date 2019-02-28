@@ -13,17 +13,44 @@ import UIKit
  */
 class UIClockHand: UIImageView {
     
-    var controller: ClockHandController? = nil
-    var type: ClockHandType? {
-        return controller?.type
+    var controller: ClockHandController
+    var type: ClockHandType {
+        return controller.type
     }
-    var time: CurrentTimeAndDate? {
-        return controller?.time
+    var time: CurrentTimeAndDate {
+        return controller.time
     }
     
-    convenience init(image: UIImage?, controller: ClockHandController?) {
-        self.init(image: image)
+    init(withImage imageName: String, controlledBy controller: ClockHandController) {
         self.controller = controller
+        let image = UIImage(named: imageName)
+        super.init(image: image)
+    }
+    
+    init(controlledBy controller: ClockHandController) {
+        self.controller = controller
+        let image = UIClockHand.getClockHandImage(withType: controller.type)
+        super.init(image: image)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.controller = ClockHandController(asType: .hour, withTime: CurrentTimeAndDate())
+        super.init(coder: aDecoder)
+    }
+    
+    static func getClockHandImage(withType type: ClockHandType) -> UIImage? {
+        var imageName = ""
+        switch type {
+        case .twentyFourHour:
+            imageName = clockHandImageName[.twentyFourHour] ?? "ClockHand_Hour24"
+        case .hour:
+            imageName = clockHandImageName[.hour] ?? "ClockHand_Hour"
+        case .minute:
+            imageName = clockHandImageName[.minute] ?? "ClockHand_Minute"
+        case .second:
+            imageName = clockHandImageName[.second] ?? "ClockHand_Second"
+        }
+        return UIImage(named: imageName)
     }
     
     /**

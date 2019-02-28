@@ -8,4 +8,5 @@
 
 import Foundation
 
+// Default time between clock ticks (in seconds)
 let defaultTickInterval: TimeInterval = TimeInterval(exactly: 1.0) ?? 1.0

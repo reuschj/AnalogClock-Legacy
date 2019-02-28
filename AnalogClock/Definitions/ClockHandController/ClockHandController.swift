@@ -11,7 +11,7 @@ import Foundation
 /**
  A class that holds type and rotation of clock hand
  */
-class ClockHandController {
+class ClockHandController: TimeAware {
     let type: ClockHandType
     let time: CurrentTimeAndDate
     var rotation: Double? {

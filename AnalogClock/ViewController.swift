@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, Timed {
     
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate = CurrentTimeAndDate()
@@ -16,59 +16,15 @@ class ViewController: UIViewController {
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
-    @IBOutlet var clock: UIClock!
+    // Analog clock display
+    @IBOutlet var analogClock: UIClock!
     
-    // Clock hands
-    @IBOutlet weak var hourHand: UIClockHand!
-    @IBOutlet weak var minuteHand: UIClockHand!
-    @IBOutlet weak var secondHand: UIClockHand!
-    
-    // Temporary label to show the test string printout of the time
+    // Digital clock display
+    // Temporary labels to show the test string printout of the time
     @IBOutlet weak var tempTimeDisplay: UILabel!
     @IBOutlet weak var tempTimeDisplay2: UILabel!
     @IBOutlet weak var tickLabel: UILabel!
     @IBOutlet weak var tockLable: UILabel!
-    
-    // Temporary function to get a test time readout... sets to the temp label and prints
-    func getTimeReadout() {
-        
-        // Hand rotation test
-        hourHand.setRotation(to: hourHand.controller?.rotationRadians)
-        minuteHand.setRotation(to: minuteHand.controller?.rotationRadians)
-        secondHand.setRotation(to: secondHand.controller?.rotationRadians)
-        
-        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period ?? "")"
-        let testTimeReadout2 = "Hours: \(hourHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(minuteHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(secondHand.controller?.rotation?.rounded() ?? 0)\u{00B0}"
-        
-        let tickTock = time.tickTock
-        if let tickTock = tickTock {
-            switch tickTock {
-            case .tick:
-                tickLabel.text = tickTock.rawValue
-                tockLable.text = ""
-            case .tock:
-                tickLabel.text = ""
-                tockLable.text = tickTock.rawValue
-            }
-        }
-        tempTimeDisplay.text = testTimeReadout
-        tempTimeDisplay2.text = testTimeReadout2
-        print(testTimeReadout)
-        print(tickTock ?? "")
-        print(testTimeReadout2)
-    }
-    
-    // Sets the clock hands with clock hand controllers
-    private func setClockHandControllers(withTime: CurrentTimeAndDate) -> Void {
-        hourHand.controller = ClockHandController(asType: .hour, withTime: time)
-        minuteHand.controller = ClockHandController(asType: .minute, withTime: time)
-        secondHand.controller = ClockHandController(asType: .second, withTime: time)
-        
-        let clockPivot = 0.85
-        hourHand.setClockHandPivot(to: clockPivot)
-        minuteHand.setClockHandPivot(to: clockPivot)
-        secondHand.setClockHandPivot(to: clockPivot)
-    }
     
     // Starts up the timer for the view controller
     private func startTimer() -> Void {
@@ -81,20 +37,19 @@ class ViewController: UIViewController {
         })
     }
     
-    // This maps to method/methods to run on timer
+    // Defines the action(s) to run when the timer fires
     private func actionOnTimer() -> Void {
-        // TODO: Replace this
-        getTimeReadout()
+        analogClock.update()
     }
     
-    
+    // Loads after the view successfully loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        setClockHandControllers(withTime: time)
+        
         startTimer()
         
-        // Testing out this initializer
-        clock = UIClock(time: time, hourHand: hourHand, minuteHand: minuteHand, secondHand: secondHand)
+        // Initialize the analog clock display
+        analogClock = UIClock(time: time)
         
     }
         

@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A41552D922251B9200D54166 /* TimeAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552D822251B9200D54166 /* TimeAware.swift */; };
+		A41552DB2227A47E00D54166 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552DA2227A47E00D54166 /* Updatable.swift */; };
+		A41552DD2227A4B200D54166 /* UpdatableClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552DC2227A4B200D54166 /* UpdatableClock.swift */; };
+		A41552DF2227A6F600D54166 /* Timed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552DE2227A6F600D54166 /* Timed.swift */; };
+		A41552E12227BA7E00D54166 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552E02227BA7E00D54166 /* constants.swift */; };
 		A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6BE22090BA70052C848 /* AppDelegate.swift */; };
 		A431F6C122090BA70052C848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6C022090BA70052C848 /* ViewController.swift */; };
 		A431F6C422090BA70052C848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A431F6C222090BA70052C848 /* Main.storyboard */; };
@@ -44,6 +49,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A41552D822251B9200D54166 /* TimeAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeAware.swift; sourceTree = "<group>"; };
+		A41552DA2227A47E00D54166 /* Updatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
+		A41552DC2227A4B200D54166 /* UpdatableClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableClock.swift; sourceTree = "<group>"; };
+		A41552DE2227A6F600D54166 /* Timed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timed.swift; sourceTree = "<group>"; };
+		A41552E02227BA7E00D54166 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
 		A431F6BB22090BA70052C848 /* AnalogClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnalogClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A431F6BE22090BA70052C848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A431F6C022090BA70052C848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +105,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A41552D32223C22C00D54166 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A41552D822251B9200D54166 /* TimeAware.swift */,
+				A41552DA2227A47E00D54166 /* Updatable.swift */,
+				A41552DC2227A4B200D54166 /* UpdatableClock.swift */,
+				A41552DE2227A6F600D54166 /* Timed.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		A431F6B222090BA70052C848 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +172,7 @@
 		A431F6EC220967B40052C848 /* Definitions */ = {
 			isa = PBXGroup;
 			children = (
+				A41552D32223C22C00D54166 /* Protocols */,
 				A4B82327220BF11500161F3D /* UI */,
 				A4BE414E2217DC3500D2D277 /* ClockHandController */,
 				A4B82323220A932700161F3D /* CurrentTimeAndDate */,
@@ -184,6 +206,7 @@
 				A4B82328220BF13700161F3D /* UIClockHand.swift */,
 				A4BE414722176C5200D2D277 /* UIClock.swift */,
 				A4BE41492217CDAB00D2D277 /* UIClockFace.swift */,
+				A41552E02227BA7E00D54166 /* constants.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -339,15 +362,20 @@
 				A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */,
 				A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */,
 				A431F6C122090BA70052C848 /* ViewController.swift in Sources */,
+				A41552DD2227A4B200D54166 /* UpdatableClock.swift in Sources */,
 				A4B82329220BF13700161F3D /* UIClockHand.swift in Sources */,
 				A4B82320220A613E00161F3D /* MonthNames.swift in Sources */,
 				A4BE414A2217CDAB00D2D277 /* UIClockFace.swift in Sources */,
 				A431F6EE220967E80052C848 /* ClockHandController.swift in Sources */,
 				A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */,
+				A41552DF2227A6F600D54166 /* Timed.swift in Sources */,
+				A41552DB2227A47E00D54166 /* Updatable.swift in Sources */,
 				A4B82325220AB66B00161F3D /* General.swift in Sources */,
+				A41552D922251B9200D54166 /* TimeAware.swift in Sources */,
 				A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */,
 				A4BE414822176C5200D2D277 /* UIClock.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
+				A41552E12227BA7E00D54166 /* constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -100,13 +100,18 @@ public class CurrentTimeAndDate {
         self.date = Date()
         self.calendar = Calendar.current
         self.timer = nil
-        self.timer = Timer.scheduledTimer(withTimeInterval: self.interval, repeats: true, block: { [weak self] timer in
-            self?.tick()
+        self.timer = startTimer(withTimeInterval: interval)
+    }
+    
+    // Creates a timer
+    private func startTimer(withTimeInterval interval: TimeInterval) -> Timer {
+        return Timer.scheduledTimer(withTimeInterval: interval, repeats: true, block: { [weak self] timer in
+            self?.update()
         })
     }
     
     // Called everytime the timer fires, this refreshes the date property with the current date
-    private func tick() {
+    private func update() {
         date = Date()
     }
     

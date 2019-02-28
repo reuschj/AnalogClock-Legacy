@@ -67,6 +67,12 @@
                                             <constraint firstItem="iJt-Z0-iUA" firstAttribute="top" secondItem="BxI-rU-XZi" secondAttribute="top" constant="8" id="vkA-bq-zfJ"/>
                                             <constraint firstItem="f5y-g0-cEU" firstAttribute="centerY" secondItem="BxI-rU-XZi" secondAttribute="centerY" id="zc3-If-KXP"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="clockFace" destination="iJt-Z0-iUA" id="j1S-9b-0m5"/>
+                                            <outlet property="hourHand" destination="bLU-33-4RL" id="hh6-me-gBs"/>
+                                            <outlet property="minuteHand" destination="f5y-g0-cEU" id="SHa-Jd-ZEZ"/>
+                                            <outlet property="secondHand" destination="LnS-69-dvy" id="eda-aP-RX4"/>
+                                        </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Z-oD-yHk">
                                         <rect key="frame" x="0.0" y="347.66666666666674" width="375" height="386.33333333333326"/>
@@ -166,7 +172,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="clock" destination="BxI-rU-XZi" id="Ewc-lJ-ohk"/>
+                        <outlet property="analogClock" destination="BxI-rU-XZi" id="Ewc-lJ-ohk"/>
                         <outlet property="hourHand" destination="bLU-33-4RL" id="eK2-ad-OuM"/>
                         <outlet property="minuteHand" destination="f5y-g0-cEU" id="sec-Ad-D8P"/>
                         <outlet property="secondHand" destination="LnS-69-dvy" id="TiD-nQ-EPA"/>
