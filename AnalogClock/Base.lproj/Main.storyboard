@@ -21,7 +21,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hSv-CC-PYB">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BxI-rU-XZi" customClass="UIClock" customModule="AnalogClock" customModuleProvider="target">
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BxI-rU-XZi" customClass="UIAnalogClock" customModule="AnalogClock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="347.66666666666669"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockFace" translatesAutoresizingMaskIntoConstraints="NO" id="iJt-Z0-iUA" customClass="UIClockFace" customModule="AnalogClock" customModuleProvider="target">

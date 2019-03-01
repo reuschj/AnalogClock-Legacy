@@ -17,12 +17,11 @@ class ViewController: UIViewController, Timed {
     var timer: Timer!
     
     // Analog clock display
-    @IBOutlet var analogClock: UIClock!
+    @IBOutlet var analogClock: UIAnalogClock!
     
     // Digital clock display
     // Temporary labels to show the test string printout of the time
     @IBOutlet weak var tempTimeDisplay: UILabel!
-    @IBOutlet weak var tempTimeDisplay2: UILabel!
     @IBOutlet weak var tickLabel: UILabel!
     @IBOutlet weak var tockLable: UILabel!
     
@@ -39,7 +38,27 @@ class ViewController: UIViewController, Timed {
     
     // Defines the action(s) to run when the timer fires
     private func actionOnTimer() -> Void {
+        
+        // Update the analog clock
         analogClock.update()
+        
+        // Update the digital clock
+        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period ?? "")"
+    
+        let tickTock = time.tickTock
+        if let tickTock = tickTock {
+            switch tickTock {
+            case .tick:
+                tickLabel.text = tickTock.rawValue
+                tockLable.text = ""
+            case .tock:
+                tickLabel.text = ""
+                tockLable.text = tickTock.rawValue
+            }
+        }
+        tempTimeDisplay.text = testTimeReadout
+        print(testTimeReadout)
+        print(tickTock ?? "")
     }
     
     // Loads after the view successfully loads
@@ -49,7 +68,7 @@ class ViewController: UIViewController, Timed {
         startTimer()
         
         // Initialize the analog clock display
-        analogClock = UIClock(time: time)
+        analogClock = UIAnalogClock(time: time)
         
     }
         

@@ -26,7 +26,7 @@
 		A4B82325220AB66B00161F3D /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82324220AB66B00161F3D /* General.swift */; };
 		A4B82329220BF13700161F3D /* UIClockHand.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82328220BF13700161F3D /* UIClockHand.swift */; };
 		A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41452213E91300D2D277 /* ClockHandType.swift */; };
-		A4BE414822176C5200D2D277 /* UIClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414722176C5200D2D277 /* UIClock.swift */; };
+		A4BE414822176C5200D2D277 /* UIAnalogClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414722176C5200D2D277 /* UIAnalogClock.swift */; };
 		A4BE414A2217CDAB00D2D277 /* UIClockFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41492217CDAB00D2D277 /* UIClockFace.swift */; };
 		A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */; };
 /* End PBXBuildFile section */
@@ -75,7 +75,7 @@
 		A4B82326220AB84100161F3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4B82328220BF13700161F3D /* UIClockHand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClockHand.swift; sourceTree = "<group>"; };
 		A4BE41452213E91300D2D277 /* ClockHandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandType.swift; sourceTree = "<group>"; };
-		A4BE414722176C5200D2D277 /* UIClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClock.swift; sourceTree = "<group>"; };
+		A4BE414722176C5200D2D277 /* UIAnalogClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnalogClock.swift; sourceTree = "<group>"; };
 		A4BE41492217CDAB00D2D277 /* UIClockFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIClockFace.swift; sourceTree = "<group>"; };
 		A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padTimeUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,7 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				A4B82328220BF13700161F3D /* UIClockHand.swift */,
-				A4BE414722176C5200D2D277 /* UIClock.swift */,
+				A4BE414722176C5200D2D277 /* UIAnalogClock.swift */,
 				A4BE41492217CDAB00D2D277 /* UIClockFace.swift */,
 				A41552E02227BA7E00D54166 /* constants.swift */,
 			);
@@ -373,7 +373,7 @@
 				A4B82325220AB66B00161F3D /* General.swift in Sources */,
 				A41552D922251B9200D54166 /* TimeAware.swift in Sources */,
 				A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */,
-				A4BE414822176C5200D2D277 /* UIClock.swift in Sources */,
+				A4BE414822176C5200D2D277 /* UIAnalogClock.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
 				A41552E12227BA7E00D54166 /* constants.swift in Sources */,
 			);

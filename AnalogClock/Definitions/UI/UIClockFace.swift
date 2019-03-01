@@ -10,4 +10,18 @@ import UIKit
 
 class UIClockFace: UIImageView {
     
+    // TODO: Build this out
+    
+    // Initializer
+    // Use this when you want to explicitly pass the image name
+    init(withImage imageName: String) {
+        let image = UIImage(named: imageName)
+        super.init(image: image)
+    }
+    
+    // Required initializer
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
 }
