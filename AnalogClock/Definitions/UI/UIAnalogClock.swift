@@ -24,8 +24,8 @@ class UIAnalogClock: UIView, UpdatableClock {
     // Initializer
     // Use this if you have already created hands and clock face in superview and need to pass them
     init(time: CurrentTimeAndDate, hourHand: UIClockHand, minuteHand: UIClockHand, secondHand: UIClockHand, clockFace: UIClockFace) {
-        super.init(frame: CGRect.zero)
         self.time = time
+        super.init(frame: CGRect.zero)
         self.hourHand = hourHand
         self.minuteHand = minuteHand
         self.secondHand = secondHand
@@ -35,16 +35,16 @@ class UIAnalogClock: UIView, UpdatableClock {
     // Initializer
     // Use this to allow the initializer to create it's own hands and face
     init(time: CurrentTimeAndDate = CurrentTimeAndDate(), withPivot pivot: Double = defaultClockPivot) {
-        super.init(frame: CGRect.zero)
         self.time = time
+        super.init(frame: CGRect.zero)
         setClockHands()
         setClockFace()
     }
     
     // Required initializer
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
         self.time = CurrentTimeAndDate()
+        super.init(coder: aDecoder)
         setClockHands()
         setClockFace()
     }
@@ -70,7 +70,7 @@ class UIAnalogClock: UIView, UpdatableClock {
     }
     
     private func printRotations() {
-        let rotations = "Hours: \(hourHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(minuteHand.controller?.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(secondHand.controller?.rotation?.rounded() ?? 0)\u{00B0}"
+        let rotations = "Hours: \(hourHand.controller.rotation?.rounded() ?? 0)\u{00B0}, Minutes: \(minuteHand.controller.rotation?.rounded() ?? 0)\u{00B0}, Seconds: \(secondHand.controller.rotation?.rounded() ?? 0)\u{00B0}"
         print(rotations)
     }
     
@@ -81,7 +81,7 @@ class UIAnalogClock: UIView, UpdatableClock {
         updateHands()
         
         // For testing... TODO: Remove this later
-        printRotations()
+//        printRotations()
         
     }
     

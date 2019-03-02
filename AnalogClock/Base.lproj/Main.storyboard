@@ -115,43 +115,19 @@
                                                 <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5Y-SF-dXp">
-                                                <rect key="frame" x="0.0" y="216.99999999999994" width="375" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="cOP-YK-sa3"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotation" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDp-O7-iuP">
-                                                <rect key="frame" x="0.0" y="196.99999999999994" width="375" height="20"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="ySV-wt-FEE"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                <color key="textColor" name="scrollBarColor" catalog="System" colorSpace="catalog"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="R09-RM-ar1" firstAttribute="leading" secondItem="b3Z-oD-yHk" secondAttribute="leading" id="12Z-U1-5IF"/>
-                                            <constraint firstAttribute="trailing" secondItem="oDp-O7-iuP" secondAttribute="trailing" id="JGZ-qo-sZ8"/>
-                                            <constraint firstAttribute="trailing" secondItem="h5Y-SF-dXp" secondAttribute="trailing" id="KFg-0D-ZAh"/>
                                             <constraint firstAttribute="trailing" secondItem="R09-RM-ar1" secondAttribute="trailing" id="LTx-iZ-eJB"/>
-                                            <constraint firstItem="oDp-O7-iuP" firstAttribute="leading" secondItem="b3Z-oD-yHk" secondAttribute="leading" id="Rmr-1g-Aux"/>
                                             <constraint firstItem="HHb-6X-b3f" firstAttribute="leading" secondItem="b3Z-oD-yHk" secondAttribute="centerX" constant="8" id="dX5-IT-TrB"/>
                                             <constraint firstItem="R09-RM-ar1" firstAttribute="top" secondItem="b3Z-oD-yHk" secondAttribute="top" constant="16" id="ed0-x9-KqR"/>
-                                            <constraint firstItem="oDp-O7-iuP" firstAttribute="top" secondItem="Rq3-JT-pYn" secondAttribute="bottom" constant="40" id="eg4-nW-hpH"/>
                                             <constraint firstItem="Rq3-JT-pYn" firstAttribute="top" secondItem="hzn-GZ-WNd" secondAttribute="bottom" constant="8" id="jHW-Wg-e1w"/>
                                             <constraint firstItem="hzn-GZ-WNd" firstAttribute="leading" secondItem="b3Z-oD-yHk" secondAttribute="leading" id="mFi-i7-f5z"/>
                                             <constraint firstAttribute="trailing" secondItem="hzn-GZ-WNd" secondAttribute="trailing" id="n3J-qf-Hq3"/>
-                                            <constraint firstItem="h5Y-SF-dXp" firstAttribute="top" secondItem="oDp-O7-iuP" secondAttribute="bottom" id="nIb-Y2-es4"/>
                                             <constraint firstItem="HHb-6X-b3f" firstAttribute="top" secondItem="hzn-GZ-WNd" secondAttribute="bottom" constant="8" id="pCZ-DM-xFj"/>
                                             <constraint firstAttribute="centerX" secondItem="Rq3-JT-pYn" secondAttribute="trailing" constant="8" id="ueK-Rd-DUP"/>
                                             <constraint firstItem="hzn-GZ-WNd" firstAttribute="top" secondItem="R09-RM-ar1" secondAttribute="bottom" id="vcB-6e-cVi"/>
-                                            <constraint firstItem="h5Y-SF-dXp" firstAttribute="leading" secondItem="b3Z-oD-yHk" secondAttribute="leading" id="zc3-Uj-GnZ"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -173,11 +149,7 @@
                     </view>
                     <connections>
                         <outlet property="analogClock" destination="BxI-rU-XZi" id="Ewc-lJ-ohk"/>
-                        <outlet property="hourHand" destination="bLU-33-4RL" id="eK2-ad-OuM"/>
-                        <outlet property="minuteHand" destination="f5y-g0-cEU" id="sec-Ad-D8P"/>
-                        <outlet property="secondHand" destination="LnS-69-dvy" id="TiD-nQ-EPA"/>
                         <outlet property="tempTimeDisplay" destination="hzn-GZ-WNd" id="k0D-98-ZiK"/>
-                        <outlet property="tempTimeDisplay2" destination="h5Y-SF-dXp" id="LKe-ge-CtK"/>
                         <outlet property="tickLabel" destination="Rq3-JT-pYn" id="eTw-wD-zG2"/>
                         <outlet property="tockLable" destination="HHb-6X-b3f" id="ChU-6H-e48"/>
                     </connections>

@@ -60,6 +60,7 @@ class UIClockHand: UIImageView, Updatable {
     func setRotation(to rotation: Double?) {
         guard let rotation = rotation else { return }
         transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
+        print(transform)
     }
     
     // Sets anchor point for clock hand pivot
