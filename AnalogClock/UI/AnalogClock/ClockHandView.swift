@@ -1,5 +1,5 @@
 //
-//  UIClockHand.swift
+//  ClockHandView.swift
 //  AnalogClock
 //
 //  Created by Justin Reusch on 2/6/19.
@@ -11,7 +11,7 @@ import UIKit
 /**
  UI Image View to control clock hands
  */
-class UIClockHand: UIImageView, Updatable {
+class ClockHandView: UIImageView, Updatable {
     
     // This controller holds the time and type and calculates the rotation
     var controller: ClockHandController
@@ -24,6 +24,16 @@ class UIClockHand: UIImageView, Updatable {
     // Gets time from controller
     var time: CurrentTimeAndDate {
         return controller.time
+    }
+    
+    // Gets rotation from controller
+    var rotation: Double {
+        return controller.rotation ?? 0
+    }
+    
+    // Gets rotation in radians from controler
+    var rotationRadians: Double {
+        return controller.rotationRadians ?? 0
     }
     
     // Initializer
@@ -39,7 +49,15 @@ class UIClockHand: UIImageView, Updatable {
     // Use this when you want the image auto-set by lookup
     init(controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot) {
         self.controller = controller
-        let image = UIClockHand.getClockHandImage(withType: controller.type)
+        let image = ClockHandView.getClockHandImage(withType: controller.type)
+        super.init(image: image)
+        setClockHandPivot(to: pivot)
+    }
+    
+    // Use this when you want the image auto-set by lookup
+    init(asType type: ClockHandType, withTime time: CurrentTimeAndDate, withPivot pivot: Double = defaultClockPivot) {
+        self.controller = ClockHandController(asType: type, withTime: time)
+        let image = ClockHandView.getClockHandImage(withType: type)
         super.init(image: image)
         setClockHandPivot(to: pivot)
     }
@@ -53,14 +71,17 @@ class UIClockHand: UIImageView, Updatable {
     
     // Actions to take when an update is called for (driven by external timer which will call for periodic updates)
     func update() {
-        setRotation(to: controller.rotationRadians)
+        setRotationToCurrentTime()
     }
     
     // Sets rotation for clock hand
     func setRotation(to rotation: Double?) {
         guard let rotation = rotation else { return }
         transform = CGAffineTransform(rotationAngle: CGFloat(rotation))
-        print(transform)
+    }
+    
+    func setRotationToCurrentTime() {
+        setRotation(to: rotationRadians)
     }
     
     // Sets anchor point for clock hand pivot

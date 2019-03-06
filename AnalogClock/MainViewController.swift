@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  AnalogClock
 //
 //  Created by Justin Reusch on 2/4/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, Timed {
+class MainViewController: UIViewController, Timed {
     
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate = CurrentTimeAndDate()
@@ -17,7 +17,7 @@ class ViewController: UIViewController, Timed {
     var timer: Timer!
     
     // Analog clock display
-    @IBOutlet var analogClock: UIAnalogClock!
+    @IBOutlet var analogClock: AnalogClockView!
     
     // Digital clock display
     // Temporary labels to show the test string printout of the time
@@ -68,7 +68,7 @@ class ViewController: UIViewController, Timed {
         startTimer()
         
         // Initialize the analog clock display
-        analogClock = UIAnalogClock(time: time)
+        analogClock = AnalogClockView(time: time)
         
     }
         

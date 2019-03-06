@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AnalogClock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="AnalogClock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,30 +21,30 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hSv-CC-PYB">
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
-                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BxI-rU-XZi" customClass="UIAnalogClock" customModule="AnalogClock" customModuleProvider="target">
+                                    <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="BxI-rU-XZi" customClass="AnalogClockView" customModule="AnalogClock" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="347.66666666666669"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockFace" translatesAutoresizingMaskIntoConstraints="NO" id="iJt-Z0-iUA" customClass="UIClockFace" customModule="AnalogClock" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockFace" translatesAutoresizingMaskIntoConstraints="NO" id="iJt-Z0-iUA" customClass="ClockFaceView" customModule="AnalogClock" customModuleProvider="target">
                                                 <rect key="frame" x="21.666666666666657" y="8" width="331.66666666666674" height="331.66666666666669"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="iJt-Z0-iUA" secondAttribute="height" multiplier="1:1" id="0te-FK-5mt"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Hour" translatesAutoresizingMaskIntoConstraints="NO" id="bLU-33-4RL" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Hour" translatesAutoresizingMaskIntoConstraints="NO" id="bLU-33-4RL" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
                                                 <rect key="frame" x="149.66666666666666" y="131.33333333333334" width="76" height="85"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="85" id="EqG-we-jAR"/>
                                                     <constraint firstAttribute="width" secondItem="bLU-33-4RL" secondAttribute="height" multiplier="76:85" id="JiW-h9-LJe"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Minute" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-g0-cEU" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Minute" translatesAutoresizingMaskIntoConstraints="NO" id="f5y-g0-cEU" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
                                                 <rect key="frame" x="141" y="94" width="93" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="kR1-fO-U5S"/>
                                                     <constraint firstAttribute="width" secondItem="f5y-g0-cEU" secondAttribute="height" multiplier="32:55" id="xBc-2a-37A"/>
                                                 </constraints>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Second" translatesAutoresizingMaskIntoConstraints="NO" id="LnS-69-dvy" customClass="UIClockHand" customModule="AnalogClock" customModuleProvider="target">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Second" translatesAutoresizingMaskIntoConstraints="NO" id="LnS-69-dvy" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
                                                 <rect key="frame" x="141" y="94" width="93" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="160" id="HdX-ra-UPX"/>
@@ -72,6 +72,7 @@
                                             <outlet property="hourHand" destination="bLU-33-4RL" id="hh6-me-gBs"/>
                                             <outlet property="minuteHand" destination="f5y-g0-cEU" id="SHa-Jd-ZEZ"/>
                                             <outlet property="secondHand" destination="LnS-69-dvy" id="eda-aP-RX4"/>
+                                            <outlet property="testText" destination="5VE-NU-61L" id="D12-aG-Aem"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Z-oD-yHk">
@@ -113,6 +114,13 @@
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="18"/>
                                                 <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5VE-NU-61L">
+                                                <rect key="frame" x="50" y="280" width="297" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>

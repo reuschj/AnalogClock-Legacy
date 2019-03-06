@@ -1,5 +1,5 @@
 //
-//  UIAnalogClock.swift
+//  AnalogClockView.swift
 //  AnalogClock
 //
 //  Created by Justin Reusch on 2/15/19.
@@ -8,22 +8,24 @@
 
 import UIKit
 
-class UIAnalogClock: UIView, UpdatableClock {
+class AnalogClockView: UIView, UpdatableClock {
     
     // This will keep the current time, updated every second
     var time: CurrentTimeAndDate
     
     // Clock hands
-    @IBOutlet var hourHand: UIClockHand!
-    @IBOutlet var minuteHand: UIClockHand!
-    @IBOutlet var secondHand: UIClockHand!
+    @IBOutlet var hourHand: ClockHandView!
+    @IBOutlet var minuteHand: ClockHandView!
+    @IBOutlet var secondHand: ClockHandView!
     
     // Clock face
-    @IBOutlet var clockFace: UIClockFace!
+    @IBOutlet var clockFace: ClockFaceView!
+    
+    @IBOutlet weak var testText: UILabel!
     
     // Initializer
     // Use this if you have already created hands and clock face in superview and need to pass them
-    init(time: CurrentTimeAndDate, hourHand: UIClockHand, minuteHand: UIClockHand, secondHand: UIClockHand, clockFace: UIClockFace) {
+    init(time: CurrentTimeAndDate, hourHand: ClockHandView, minuteHand: ClockHandView, secondHand: ClockHandView, clockFace: ClockFaceView) {
         self.time = time
         super.init(frame: CGRect.zero)
         self.hourHand = hourHand
@@ -51,22 +53,28 @@ class UIAnalogClock: UIView, UpdatableClock {
     
     // Sets all three clock hand, hour, minute, second
     private func setClockHands(withPivot pivot: Double = defaultClockPivot) {
-        hourHand = UIClockHand(controlledBy: ClockHandController(asType: .hour, withTime: time), withPivot: pivot)
-        minuteHand = UIClockHand(controlledBy: ClockHandController(asType: .minute, withTime: time), withPivot: pivot)
-        secondHand = UIClockHand(controlledBy: ClockHandController(asType: .second, withTime: time), withPivot: pivot)
+        hourHand = ClockHandView(controlledBy: ClockHandController(asType: .hour, withTime: time), withPivot: pivot)
+        minuteHand = ClockHandView(controlledBy: ClockHandController(asType: .minute, withTime: time), withPivot: pivot)
+        secondHand = ClockHandView(controlledBy: ClockHandController(asType: .second, withTime: time), withPivot: pivot)
     }
     
     // Sets the clock face image
     private func setClockFace() {
         // TODO: Better lookup
-        clockFace = UIClockFace(withImage: "ClockFace")
+        clockFace = ClockFaceView(withImage: "ClockFace")
     }
     
     // Sends update to all clock hands
     private func updateHands() {
-        hourHand.update()
-        minuteHand.update()
-        secondHand.update()
+//        hourHand.update()
+//        minuteHand.update()
+//        secondHand.update()
+        hourHand.setRotation(to: hourHand.rotationRadians)
+        minuteHand.setRotation(to: minuteHand.rotationRadians)
+        secondHand.setRotation(to: secondHand.rotationRadians)
+        
+        print("Rotation: \(secondHand.rotationRadians)")
+        testText.text = "\(secondHand.rotationRadians)"
     }
     
     private func printRotations() {
@@ -81,7 +89,7 @@ class UIAnalogClock: UIView, UpdatableClock {
         updateHands()
         
         // For testing... TODO: Remove this later
-//        printRotations()
+        printRotations()
         
     }
     

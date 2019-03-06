@@ -1,5 +1,5 @@
 //
-//  UIClockFace.swift
+//  ClockFaceView.swift
 //  AnalogClock
 //
 //  Created by Justin Reusch on 2/15/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UIClockFace: UIImageView {
+class ClockFaceView: UIImageView {
     
     // TODO: Build this out
     
