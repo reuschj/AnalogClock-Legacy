@@ -9,5 +9,5 @@
 import Foundation
 
 protocol TimeAware {
-    var time: CurrentTimeAndDate { get }
+    var time: CurrentTimeAndDate! { get }
 }

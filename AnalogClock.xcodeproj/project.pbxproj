@@ -12,8 +12,8 @@
 		A41552DD2227A4B200D54166 /* UpdatableClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552DC2227A4B200D54166 /* UpdatableClock.swift */; };
 		A41552DF2227A6F600D54166 /* Timed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552DE2227A6F600D54166 /* Timed.swift */; };
 		A41552E12227BA7E00D54166 /* constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552E02227BA7E00D54166 /* constants.swift */; };
-		A41552E3222B02E100D54166 /* AnalogClock.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41552E2222B02E100D54166 /* AnalogClock.xib */; };
-		A41552E6222F995700D54166 /* AnalogClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552E5222F995700D54166 /* AnalogClockViewController.swift */; };
+		A41552E3222B02E100D54166 /* AnalogClockLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41552E2222B02E100D54166 /* AnalogClockLayout.xib */; };
+		A41552E9223237BD00D54166 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A41552E8223237BD00D54166 /* ReusableView.swift */; };
 		A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6BE22090BA70052C848 /* AppDelegate.swift */; };
 		A431F6C122090BA70052C848 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6C022090BA70052C848 /* MainViewController.swift */; };
 		A431F6C422090BA70052C848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A431F6C222090BA70052C848 /* Main.storyboard */; };
@@ -22,13 +22,14 @@
 		A431F6D422090BA90052C848 /* AnalogClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6D322090BA90052C848 /* AnalogClockTests.swift */; };
 		A431F6DF22090BA90052C848 /* AnalogClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6DE22090BA90052C848 /* AnalogClockUITests.swift */; };
 		A431F6EE220967E80052C848 /* ClockHandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6ED220967E80052C848 /* ClockHandController.swift */; };
+		A4A47E4422362D8000537840 /* AnalogClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A47E4322362D8000537840 /* AnalogClockViewController.swift */; };
+		A4A47E48223A1B4F00537840 /* AnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A47E47223A1B4F00537840 /* AnalogClockView.swift */; };
 		A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */; };
 		A4B82320220A613E00161F3D /* MonthNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B8231F220A613E00161F3D /* MonthNames.swift */; };
 		A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82321220A8F9700161F3D /* WeekNames.swift */; };
 		A4B82325220AB66B00161F3D /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82324220AB66B00161F3D /* General.swift */; };
 		A4B82329220BF13700161F3D /* ClockHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82328220BF13700161F3D /* ClockHandView.swift */; };
 		A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41452213E91300D2D277 /* ClockHandType.swift */; };
-		A4BE414822176C5200D2D277 /* AnalogClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414722176C5200D2D277 /* AnalogClockView.swift */; };
 		A4BE414A2217CDAB00D2D277 /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */; };
 		A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */; };
 /* End PBXBuildFile section */
@@ -56,8 +57,8 @@
 		A41552DC2227A4B200D54166 /* UpdatableClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdatableClock.swift; sourceTree = "<group>"; };
 		A41552DE2227A6F600D54166 /* Timed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timed.swift; sourceTree = "<group>"; };
 		A41552E02227BA7E00D54166 /* constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = constants.swift; sourceTree = "<group>"; };
-		A41552E2222B02E100D54166 /* AnalogClock.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalogClock.xib; sourceTree = "<group>"; };
-		A41552E5222F995700D54166 /* AnalogClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockViewController.swift; sourceTree = "<group>"; };
+		A41552E2222B02E100D54166 /* AnalogClockLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnalogClockLayout.xib; sourceTree = "<group>"; };
+		A41552E8223237BD00D54166 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A431F6BB22090BA70052C848 /* AnalogClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnalogClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A431F6BE22090BA70052C848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A431F6C022090BA70052C848 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +73,8 @@
 		A431F6DE22090BA90052C848 /* AnalogClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockUITests.swift; sourceTree = "<group>"; };
 		A431F6E022090BA90052C848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A431F6ED220967E80052C848 /* ClockHandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandController.swift; sourceTree = "<group>"; };
+		A4A47E4322362D8000537840 /* AnalogClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockViewController.swift; sourceTree = "<group>"; };
+		A4A47E47223A1B4F00537840 /* AnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockView.swift; sourceTree = "<group>"; };
 		A4B8231C220A5A2600161F3D /* CurrentTimeAndDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentTimeAndDate.swift; sourceTree = "<group>"; };
 		A4B8231F220A613E00161F3D /* MonthNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthNames.swift; sourceTree = "<group>"; };
 		A4B82321220A8F9700161F3D /* WeekNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekNames.swift; sourceTree = "<group>"; };
@@ -79,7 +82,6 @@
 		A4B82326220AB84100161F3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4B82328220BF13700161F3D /* ClockHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandView.swift; sourceTree = "<group>"; };
 		A4BE41452213E91300D2D277 /* ClockHandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandType.swift; sourceTree = "<group>"; };
-		A4BE414722176C5200D2D277 /* AnalogClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalogClockView.swift; sourceTree = "<group>"; };
 		A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
 		A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padTimeUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,11 +127,19 @@
 			children = (
 				A4B82328220BF13700161F3D /* ClockHandView.swift */,
 				A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */,
-				A4BE414722176C5200D2D277 /* AnalogClockView.swift */,
-				A41552E5222F995700D54166 /* AnalogClockViewController.swift */,
-				A41552E2222B02E100D54166 /* AnalogClock.xib */,
+				A4A47E47223A1B4F00537840 /* AnalogClockView.swift */,
+				A4A47E4322362D8000537840 /* AnalogClockViewController.swift */,
+				A41552E2222B02E100D54166 /* AnalogClockLayout.xib */,
 			);
 			path = AnalogClock;
+			sourceTree = "<group>";
+		};
+		A41552E72232374000D54166 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				A41552E8223237BD00D54166 /* ReusableView.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A431F6B222090BA70052C848 = {
@@ -219,6 +229,7 @@
 		A4B82327220BF11500161F3D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A41552E72232374000D54166 /* Protocols */,
 				A41552E4222F989A00D54166 /* AnalogClock */,
 				A41552E02227BA7E00D54166 /* constants.swift */,
 			);
@@ -348,7 +359,7 @@
 			files = (
 				A431F6C922090BA90052C848 /* LaunchScreen.storyboard in Resources */,
 				A431F6C622090BA90052C848 /* Assets.xcassets in Resources */,
-				A41552E3222B02E100D54166 /* AnalogClock.xib in Resources */,
+				A41552E3222B02E100D54166 /* AnalogClockLayout.xib in Resources */,
 				A431F6C422090BA70052C848 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +389,7 @@
 				A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */,
 				A431F6C122090BA70052C848 /* MainViewController.swift in Sources */,
 				A41552DD2227A4B200D54166 /* UpdatableClock.swift in Sources */,
+				A4A47E48223A1B4F00537840 /* AnalogClockView.swift in Sources */,
 				A4B82329220BF13700161F3D /* ClockHandView.swift in Sources */,
 				A4B82320220A613E00161F3D /* MonthNames.swift in Sources */,
 				A4BE414A2217CDAB00D2D277 /* ClockFaceView.swift in Sources */,
@@ -386,12 +398,12 @@
 				A41552DF2227A6F600D54166 /* Timed.swift in Sources */,
 				A41552DB2227A47E00D54166 /* Updatable.swift in Sources */,
 				A4B82325220AB66B00161F3D /* General.swift in Sources */,
+				A4A47E4422362D8000537840 /* AnalogClockViewController.swift in Sources */,
 				A41552D922251B9200D54166 /* TimeAware.swift in Sources */,
 				A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */,
-				A4BE414822176C5200D2D277 /* AnalogClockView.swift in Sources */,
+				A41552E9223237BD00D54166 /* ReusableView.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
 				A41552E12227BA7E00D54166 /* constants.swift in Sources */,
-				A41552E6222F995700D54166 /* AnalogClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

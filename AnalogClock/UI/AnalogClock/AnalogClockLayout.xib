@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AnalogClockView" customModule="AnalogClock" customModuleProvider="target" colorLabel="IBBuiltInLabel-Orange">
+            <connections>
+                <outlet property="clockFace" destination="YVe-kN-PeA" id="stU-yp-a3I"/>
+                <outlet property="hourHand" destination="KyY-lc-LYP" id="1WR-If-tir"/>
+                <outlet property="minuteHand" destination="jFO-6H-5Yw" id="JjJ-vL-h62"/>
+                <outlet property="secondHand" destination="m41-uU-UUj" id="GCC-Jc-MTx"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="1BA-pX-EYC" customClass="AnalogClockView" customModule="AnalogClock" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockFace" translatesAutoresizingMaskIntoConstraints="NO" id="YVe-kN-PeA" customClass="ClockFaceView" customModule="AnalogClock" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="YVe-kN-PeA" secondAttribute="height" multiplier="1:1" id="dE3-jK-BSF"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Hour" translatesAutoresizingMaskIntoConstraints="NO" id="KyY-lc-LYP" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
+                            <rect key="frame" x="149.5" y="145" width="76" height="85"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="85" id="Kyf-t4-C8w"/>
+                                <constraint firstAttribute="width" secondItem="KyY-lc-LYP" secondAttribute="height" multiplier="76:85" id="lmL-yJ-xVJ"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Minute" translatesAutoresizingMaskIntoConstraints="NO" id="jFO-6H-5Yw" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
+                            <rect key="frame" x="141" y="107.5" width="93" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="aUX-3Q-wsm"/>
+                                <constraint firstAttribute="width" secondItem="jFO-6H-5Yw" secondAttribute="height" multiplier="32:55" id="ci2-1B-oIF"/>
+                            </constraints>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ClockHand_Second" translatesAutoresizingMaskIntoConstraints="NO" id="m41-uU-UUj" customClass="ClockHandView" customModule="AnalogClock" customModuleProvider="target">
+                            <rect key="frame" x="141" y="107.5" width="93" height="160"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="160" id="D6T-DS-CgU"/>
+                                <constraint firstAttribute="width" secondItem="m41-uU-UUj" secondAttribute="height" multiplier="32:55" id="PGa-Bm-bdL"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="YVe-kN-PeA" firstAttribute="leading" secondItem="1BA-pX-EYC" secondAttribute="leading" id="1vj-6e-xAh"/>
+                        <constraint firstItem="YVe-kN-PeA" firstAttribute="centerY" secondItem="1BA-pX-EYC" secondAttribute="centerY" id="2BY-B6-Vqc"/>
+                        <constraint firstItem="m41-uU-UUj" firstAttribute="centerY" secondItem="1BA-pX-EYC" secondAttribute="centerY" id="AZi-pW-mIE"/>
+                        <constraint firstItem="m41-uU-UUj" firstAttribute="centerX" secondItem="1BA-pX-EYC" secondAttribute="centerX" id="GQF-zK-8p6"/>
+                        <constraint firstAttribute="width" secondItem="1BA-pX-EYC" secondAttribute="height" multiplier="1:1" id="OKf-ZK-ayF"/>
+                        <constraint firstItem="KyY-lc-LYP" firstAttribute="centerX" secondItem="1BA-pX-EYC" secondAttribute="centerX" id="Ro9-fz-l8n"/>
+                        <constraint firstItem="KyY-lc-LYP" firstAttribute="centerY" secondItem="1BA-pX-EYC" secondAttribute="centerY" id="Rqr-37-H1a"/>
+                        <constraint firstItem="jFO-6H-5Yw" firstAttribute="centerX" secondItem="1BA-pX-EYC" secondAttribute="centerX" id="ZyH-lv-qDv"/>
+                        <constraint firstItem="YVe-kN-PeA" firstAttribute="centerX" secondItem="1BA-pX-EYC" secondAttribute="centerX" id="gSz-iS-7Be"/>
+                        <constraint firstItem="YVe-kN-PeA" firstAttribute="trailing" secondItem="1BA-pX-EYC" secondAttribute="trailing" id="j2n-lv-B0E"/>
+                        <constraint firstItem="jFO-6H-5Yw" firstAttribute="centerY" secondItem="1BA-pX-EYC" secondAttribute="centerY" id="xbq-lF-ott"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="1BA-pX-EYC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="BQc-gH-Jc7"/>
+                <constraint firstItem="1BA-pX-EYC" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="YS1-Ku-NT1"/>
+                <constraint firstItem="1BA-pX-EYC" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="ssM-B6-MDw"/>
+                <constraint firstItem="1BA-pX-EYC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zRy-iC-rAq"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="AnalogClock"/>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="53.600000000000001" y="-89.505247376311857"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ClockFace" width="1000" height="1000"/>
+        <image name="ClockHand_Hour" width="375" height="812"/>
+        <image name="ClockHand_Minute" width="100" height="813"/>
+        <image name="ClockHand_Second" width="100" height="813"/>
+    </resources>
+</document>

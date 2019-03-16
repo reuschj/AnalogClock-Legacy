@@ -13,7 +13,7 @@ import Foundation
  */
 class ClockHandController: TimeAware {
     let type: ClockHandType
-    let time: CurrentTimeAndDate
+    let time: CurrentTimeAndDate!
     var rotation: Double? {
         // Unwrap time elements
         guard let hour24 = time.hour24 else { return nil }

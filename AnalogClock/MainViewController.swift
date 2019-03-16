@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MainViewController: UIViewController, Timed {
+class MainViewController: UIViewController, Timed, TimeAware {
     
     // This will keep the current time, updated every second
-    let time: CurrentTimeAndDate = CurrentTimeAndDate()
+    let time: CurrentTimeAndDate! = CurrentTimeAndDate()
     
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
     // Analog clock display
-    @IBOutlet var analogClock: AnalogClockView!
+    @IBOutlet  var analogClock: AnalogClockView!
     
     // Digital clock display
     // Temporary labels to show the test string printout of the time
@@ -65,10 +65,11 @@ class MainViewController: UIViewController, Timed {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        startTimer()
-        
         // Initialize the analog clock display
-        analogClock = AnalogClockView(time: time)
+//        analogClock = AnalogClockView2(time: time)
+        analogClock.setup(withTime: time)
+        
+        startTimer()
         
     }
         

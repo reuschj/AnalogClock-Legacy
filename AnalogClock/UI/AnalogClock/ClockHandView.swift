@@ -14,7 +14,7 @@ import UIKit
 class ClockHandView: UIImageView, Updatable {
     
     // This controller holds the time and type and calculates the rotation
-    var controller: ClockHandController
+    var controller: ClockHandController!
     
     // Gets clock hand type from controller
     var type: ClockHandType {
@@ -64,9 +64,13 @@ class ClockHandView: UIImageView, Updatable {
     
     // Required initializer
     required init?(coder aDecoder: NSCoder) {
-        self.controller = ClockHandController(asType: .hour, withTime: CurrentTimeAndDate())
         super.init(coder: aDecoder)
         setClockHandPivot(to: defaultClockPivot)
+    }
+    
+    func setup(withController controller: ClockHandController, andPivot pivot: Double = defaultClockPivot) {
+        self.controller = controller
+        setClockHandPivot(to: pivot)
     }
     
     // Actions to take when an update is called for (driven by external timer which will call for periodic updates)

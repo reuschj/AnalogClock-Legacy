@@ -11,6 +11,8 @@ import Foundation
 // Default pivot point for clock hands 0 = leading tip, 1 = end
 let defaultClockPivot: Double = 0.85
 
+let analogClockNibName = "AnalogClock"
+
 // Dictionary to look up clock hand image names
 let clockHandImageName: [ClockHandType:String] = [
     .twentyFourHour: "ClockHand_24Hour",
