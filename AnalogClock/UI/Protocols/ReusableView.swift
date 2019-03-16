@@ -19,6 +19,7 @@ protocol ReusableView {
     
     // Sets content view
     func loadView() -> Void
+    func loadViewFromNib() -> UIView?
     
     // Override these super methods
     func prepareForInterfaceBuilder() -> Void

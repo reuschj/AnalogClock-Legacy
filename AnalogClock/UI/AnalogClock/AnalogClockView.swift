@@ -73,11 +73,13 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
         
     }
     
+    // Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
     override func awakeFromNib() {
         super.awakeFromNib()
         loadView()
     }
     
+    // Loads view from XIB file as sub-view
     func loadView() {
         guard let view = loadViewFromNib() else { return }
         view.frame = bounds
@@ -87,6 +89,7 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
         contentView = view
     }
     
+    // Loads the view from a XIB file
     func loadViewFromNib() -> UIView? {
         guard let nibName = nibName else { return nil }
         let bundle = Bundle(for: type(of: self))
@@ -96,6 +99,7 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
             options: nil).first as? UIView
     }
     
+    // Called when a designable object is created in Interface Builder.
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
         loadView()
