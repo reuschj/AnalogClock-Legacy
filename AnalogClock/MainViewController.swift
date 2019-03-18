@@ -43,7 +43,7 @@ class MainViewController: UIViewController, Timed, TimeAware {
         analogClock.update()
         
         // Update the digital clock
-        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period ?? "")"
+        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period?.rawValue ?? "")"
     
         let tickTock = time.tickTock
         if let tickTock = tickTock {

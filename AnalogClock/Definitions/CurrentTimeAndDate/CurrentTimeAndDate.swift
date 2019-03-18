@@ -73,9 +73,9 @@ public class CurrentTimeAndDate {
     public var hour24: Int? {
         return dateComponents.hour
     }
-    public var period: String? {
+    public var period: Period? {
         guard let hour = dateComponents.hour else { return nil }
-        return hour >= 0 && hour < 12 ? "AM" : "PM"
+        return hour >= 0 && hour < 12 ? .am : .pm
     }
     public var minute: Int? {
         return dateComponents.minute

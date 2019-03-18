@@ -8,6 +8,8 @@
 
 import Foundation
 
+let fullCircle: Double = 360
+
 /**
  A class that holds type and rotation of clock hand
  */
@@ -30,13 +32,13 @@ class ClockHandController: TimeAware {
         // Return the final calculation depending on the type
         switch type {
         case .twentyFourHour:
-            return period24 * 360
+            return (period24 * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case .hour:
-            return period * 360
+            return (period * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case .minute:
-            return (minutes / 60) * 360
+            return ((minutes / 60) * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case.second:
-            return (seconds / 60) * 360
+            return ((seconds / 60) * 360).truncatingRemainder(dividingBy: fullCircle)
         }
     }
     var rotationRadians: Double? {
