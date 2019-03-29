@@ -39,9 +39,6 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
         hourHand?.setup(withController: ClockHandController(asType: .hour, withTime: time), andPivot: pivot)
         minuteHand?.setup(withController: ClockHandController(asType: .minute, withTime: time), andPivot: pivot)
         secondHand?.setup(withController: ClockHandController(asType: .second, withTime: time), andPivot: pivot)
-        //        hourHand = ClockHandView(controlledBy: ClockHandController(asType: .hour, withTime: time), withPivot: pivot)
-        //        minuteHand = ClockHandView(controlledBy: ClockHandController(asType: .minute, withTime: time), withPivot: pivot)
-        //        secondHand = ClockHandView(controlledBy: ClockHandController(asType: .second, withTime: time), withPivot: pivot)
     }
     
     // Sets the clock face image
@@ -79,31 +76,10 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
         loadView()
     }
     
-    // Loads view from XIB file as sub-view
-    func loadView() {
-        guard let view = loadViewFromNib() else { return }
-        view.frame = bounds
-        view.autoresizingMask =
-            [.flexibleWidth, .flexibleHeight]
-        addSubview(view)
-        contentView = view
-    }
-    
-    // Loads the view from a XIB file
-    func loadViewFromNib() -> UIView? {
-        guard let nibName = nibName else { return nil }
-        let bundle = Bundle(for: type(of: self))
-        let nib = UINib(nibName: nibName, bundle: bundle)
-        return nib.instantiate(
-            withOwner: self,
-            options: nil).first as? UIView
-    }
-    
     // Called when a designable object is created in Interface Builder.
     override func prepareForInterfaceBuilder() {
         super.prepareForInterfaceBuilder()
-        loadView()
-        contentView?.prepareForInterfaceBuilder()
+        prepareViewForInterfaceBuilder()
     }
 
 }

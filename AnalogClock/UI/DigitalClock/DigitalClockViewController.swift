@@ -9,6 +9,8 @@
 import UIKit
 
 class DigitalClockViewController: UIViewController {
+    
+    // TODO: Will probably get rid of this... but might want the option to make it 100% programatic
 
     override func viewDidLoad() {
         super.viewDidLoad()
