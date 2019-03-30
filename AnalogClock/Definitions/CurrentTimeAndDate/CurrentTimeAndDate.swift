@@ -70,8 +70,16 @@ public class CurrentTimeAndDate {
             return hour % 12
         }
     }
+    public var hour12String: String? {
+        guard let hour12 = hour12 else { return nil }
+        return String(hour12)
+    }
     public var hour24: Int? {
         return dateComponents.hour
+    }
+    public var hour24String: String? {
+        guard let hour24 = hour24 else { return nil }
+        return padTimeUnit(hour24)
     }
     public var period: Period? {
         guard let hour = dateComponents.hour else { return nil }

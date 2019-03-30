@@ -24,6 +24,7 @@
 		A431F6EE220967E80052C848 /* ClockHandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A431F6ED220967E80052C848 /* ClockHandController.swift */; };
 		A4552398224DE0930064BF5F /* DigitalClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4552397224DE0930064BF5F /* DigitalClockView.swift */; };
 		A455239A224DEB380064BF5F /* DigitalClockLayout.xib in Resources */ = {isa = PBXBuildFile; fileRef = A4552399224DEB380064BF5F /* DigitalClockLayout.xib */; };
+		A455239C224F4AF40064BF5F /* DigitalDisplayComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A455239B224F4AF40064BF5F /* DigitalDisplayComponent.swift */; };
 		A495AC65223F711C007C86CB /* DigitalClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495AC64223F711B007C86CB /* DigitalClockViewController.swift */; };
 		A495AC67223F745D007C86CB /* ClockType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495AC66223F745D007C86CB /* ClockType.swift */; };
 		A495AC69223F75DD007C86CB /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = A495AC68223F75DD007C86CB /* Period.swift */; };
@@ -79,6 +80,7 @@
 		A431F6ED220967E80052C848 /* ClockHandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandController.swift; sourceTree = "<group>"; };
 		A4552397224DE0930064BF5F /* DigitalClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockView.swift; sourceTree = "<group>"; };
 		A4552399224DEB380064BF5F /* DigitalClockLayout.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DigitalClockLayout.xib; sourceTree = "<group>"; };
+		A455239B224F4AF40064BF5F /* DigitalDisplayComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalDisplayComponent.swift; sourceTree = "<group>"; };
 		A495AC64223F711B007C86CB /* DigitalClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockViewController.swift; sourceTree = "<group>"; };
 		A495AC66223F745D007C86CB /* ClockType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockType.swift; sourceTree = "<group>"; };
 		A495AC68223F75DD007C86CB /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				A495AC64223F711B007C86CB /* DigitalClockViewController.swift */,
 				A4552397224DE0930064BF5F /* DigitalClockView.swift */,
 				A4552399224DEB380064BF5F /* DigitalClockLayout.xib */,
+				A455239B224F4AF40064BF5F /* DigitalDisplayComponent.swift */,
 			);
 			path = DigitalClock;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A495AC65223F711C007C86CB /* DigitalClockViewController.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
 				A41552E12227BA7E00D54166 /* constants.swift in Sources */,
+				A455239C224F4AF40064BF5F /* DigitalDisplayComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

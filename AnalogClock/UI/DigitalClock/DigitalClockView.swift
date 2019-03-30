@@ -17,22 +17,32 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     // This will keep the current time, updated every second
     var time: CurrentTimeAndDate!
     
+    // The stack view of all time idcomponents
+    @IBOutlet weak var timeDisplay: UIStackView!
+    
     // Digital clock display parts
-    @IBOutlet weak var hoursDisplay: UILabel!
-    @IBOutlet weak var minutesDisplay: UILabel!
-    @IBOutlet weak var secondsDisplay: UILabel!
-    @IBOutlet weak var periodDisplay: UILabel!
+    @IBOutlet weak var hoursDisplay: DigitalDisplayComponent!
+    @IBOutlet weak var minutesDisplay: DigitalDisplayComponent!
+    @IBOutlet weak var secondsDisplay: DigitalDisplayComponent!
+    @IBOutlet weak var periodDisplay: DigitalDisplayComponent!
     
     func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate()) {
         self.time = time
     }
     
     func update() {
-        // TODO: Write update code
-//        hoursDisplay?.update()
-//        minutesDisplay?.update()
-//        secondsDisplay?.update()
-//        periodDisplay?.update()
+        hoursDisplay?.update()
+        minutesDisplay?.update()
+        secondsDisplay?.update()
+        periodDisplay?.update()
+    }
+    
+    func setPeriodDisplayConstraints() {
+        periodDisplay.widthAnchor.constraint(equalToConstant: 48)
+    }
+    
+    func showPeriodDisplay(visible: Bool = true) {
+        
     }
     
     // Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.
