@@ -14,20 +14,62 @@ class DigitalDisplayComponent: UILabel, Updatable, TimeAware {
     
     var type: ClockHandType?
     
-    var preferredWidth: CGFloat = 48
+    private var isHiddenAndMinimized = false
+    override var isHidden: Bool {
+        get {
+            return isHiddenAndMinimized
+        }
+        set {
+            isHiddenAndMinimized = newValue
+        }
+    }
+    
+    static let defaultOrigin = CGPoint(x: 0, y: 0)
+    static let defaultSize = CGSize(width: 48, height: 40)
+    
+    var width: CGFloat {
+        get {
+            return bounds.width
+        }
+        set {
+            let scaleAmount: CGFloat = newValue / bounds.width
+            let newSize: CGRect = bounds.applying(CGAffineTransform(scaleX: scaleAmount, y: 0))
+            bounds = newSize
+        }
+    }
+    var height: CGFloat {
+        get {
+            return bounds.height
+        }
+        set {
+            let scaleAmount: CGFloat = newValue / bounds.height
+            let newSize: CGRect = bounds.applying(CGAffineTransform(scaleX: 0, y: scaleAmount))
+            bounds = newSize
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    convenience init(asType type: ClockHandType, withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), origin: CGPoint = DigitalDisplayComponent.defaultOrigin, size: CGSize = DigitalDisplayComponent.defaultSize) {
+        self.init(frame: CGRect(origin: origin, size: size))
+        setup(asType: type, withTime: time)
     }
     
-    func setup(asType type: ClockHandType, withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andPreferredWidth preferredWidth: Int = 48) {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    func setup(asType type: ClockHandType, withTime time: CurrentTimeAndDate = CurrentTimeAndDate()) {
         self.type = type
         self.time = time
-        self.preferredWidth = CGFloat(preferredWidth)
+    }
+    
+    func setup(asType type: ClockHandType, withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), width: CGFloat = DigitalDisplayComponent.defaultSize.width, height: CGFloat = DigitalDisplayComponent.defaultSize.height) {
+        setup(asType: type, withTime: time)
+        self.width = width
+        self.height = height
     }
 
     func update() {
@@ -36,26 +78,16 @@ class DigitalDisplayComponent: UILabel, Updatable, TimeAware {
     
     func getCurrentTime() -> String? {
         guard let type = type else { return nil }
-        switch type {
-        case .twentyFourHour:
-            return time?.hour24String
-        case .hour:
-            return time?.hour12String
-        case .minute:
-            return time?.paddedMinute
-        case .second:
-            return time?.paddedSecond
-        default:
-            guard let period = time?.period else { return nil }
-            return period.rawValue
-        }
+        return type.getCurrentTime(fromTime: time)
     }
     
-    func show(_ visible: Bool = true) {
-        if (visible) {
+    func show(_ makingVisible: Bool = true) {
+        if (makingVisible) {
+            guard isHidden else { return }
             isHidden = false
-            widthAnchor.constraint(equalToConstant: preferredWidth)
+            widthAnchor.constraint(equalToConstant: width)
         } else {
+            guard !isHidden else { return }
             isHidden = true
             widthAnchor.constraint(equalToConstant: 0)
         }

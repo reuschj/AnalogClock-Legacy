@@ -22,23 +22,39 @@ class ClockHandController: TimeAware {
         guard let hour = time.hour12 else { return nil }
         guard let minute = time.minute else { return nil }
         guard let second = time.second else { return nil }
+        guard let period = time.period else { return nil }
+        guard let tickTock = time.tickTock else { return nil }
         // These are with fractions added from smaller increments
         let seconds = Double(second)
         let minutes = Double(minute) + seconds / 60
         let hours = Double(hour) + minutes / 60
         let hours24 = Double(hour24) + minutes / 60
-        let period: Double = hours / 12
+        let period12: Double = hours / 12
         let period24: Double = hours24 / 24
         // Return the final calculation depending on the type
         switch type {
         case .twentyFourHour:
             return (period24 * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case .hour:
-            return (period * fullCircle).truncatingRemainder(dividingBy: fullCircle)
+            return (period12 * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case .minute:
             return ((minutes / 60) * fullCircle).truncatingRemainder(dividingBy: fullCircle)
         case.second:
             return ((seconds / 60) * 360).truncatingRemainder(dividingBy: fullCircle)
+        case .period:
+            switch period {
+            case .pm:
+                return 1
+            default:
+                return 0
+            }
+        case .tickTock:
+            switch tickTock {
+            case .tock:
+                return 1
+            default:
+                return 0
+            }
         }
     }
     var rotationRadians: Double? {

@@ -13,13 +13,18 @@ class MainViewController: UIViewController, Timed, TimeAware {
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate! = CurrentTimeAndDate()
     
+    // Clock type can be 12 or 24 hour
+    var type: ClockType = .twelveHour
+    
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
     // Analog clock display
-    @IBOutlet  var analogClock: AnalogClockView!
+    @IBOutlet var analogClock: AnalogClockView!
     
     // Digital clock display
+    @IBOutlet var digitalClock: DigitalClockView!
+    
     // Temporary labels to show the test string printout of the time
     @IBOutlet weak var tempTimeDisplay: UILabel!
     @IBOutlet weak var tickLabel: UILabel!
@@ -39,8 +44,9 @@ class MainViewController: UIViewController, Timed, TimeAware {
     // Defines the action(s) to run when the timer fires
     private func actionOnTimer() -> Void {
         
-        // Update the analog clock
+        // Update the analog and digtial clocks
         analogClock.update()
+        digitalClock.update()
         
         // Update the digital clock
         let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period?.rawValue ?? "")"
@@ -65,9 +71,9 @@ class MainViewController: UIViewController, Timed, TimeAware {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Initialize the analog clock display
-//        analogClock = AnalogClockView2(time: time)
-        analogClock.setup(withTime: time)
+        // Initialize the analog clock and digital clock displays
+        analogClock.setup(withTime: time) // TODO: Add passing type to analog clock
+        digitalClock.setup(withTime: time, andType: type)
         
         startTimer()
         

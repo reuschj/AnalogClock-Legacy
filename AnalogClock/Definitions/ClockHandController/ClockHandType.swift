@@ -16,4 +16,27 @@ enum ClockHandType: String {
     case hour
     case minute
     case second
+    case period
+    case tickTock
+    
+    // Gets current time element from CurrentTimeAndDate instance
+    func getCurrentTime(fromTime time: CurrentTimeAndDate?) -> String? {
+        guard let time = time else { return nil }
+        switch self {
+        case .twentyFourHour:
+            return time.hour24String
+        case .hour:
+            return time.hour12String
+        case .minute:
+            return time.paddedMinute
+        case .second:
+            return time.paddedSecond
+        case .period:
+            guard let period = time.period else { return nil }
+            return period.rawValue
+        case .tickTock:
+            guard let tickTock = time.tickTock else { return nil }
+            return tickTock.rawValue
+        }
+    }
 }
