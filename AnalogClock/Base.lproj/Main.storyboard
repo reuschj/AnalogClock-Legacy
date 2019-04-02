@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,14 +22,21 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="734"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IHG-5y-uhc" customClass="AnalogClockView" customModule="AnalogClock" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="326.33333333333331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="AnalogClockLayout"/>
                                         </userDefinedRuntimeAttributes>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8KQ-jI-iTh" customClass="DigitalClockView" customModule="AnalogClock" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="326.33333333333331" width="375" height="81.333333333333314"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="nibName" value="DigitalClockLayout"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b3Z-oD-yHk">
-                                        <rect key="frame" x="0.0" y="367" width="375" height="367"/>
+                                        <rect key="frame" x="0.0" y="407.66666666666674" width="375" height="326.33333333333326"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The time is..." textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R09-RM-ar1">
                                                 <rect key="frame" x="0.0" y="32" width="375" height="24"/>
@@ -50,7 +57,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rq3-JT-pYn">
-                                                <rect key="frame" x="0.0" y="112" width="179.66666666666666" height="24"/>
+                                                <rect key="frame" x="0.0" y="111.99999999999994" width="179.66666666666666" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="rJ0-Cq-Btx"/>
                                                 </constraints>
@@ -59,7 +66,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHb-6X-b3f">
-                                                <rect key="frame" x="195.66666666666663" y="112" width="179.33333333333337" height="24"/>
+                                                <rect key="frame" x="195.66666666666663" y="111.99999999999994" width="179.33333333333337" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="TES-EG-1Rx"/>
                                                 </constraints>
@@ -86,7 +93,8 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="IHG-5y-uhc" firstAttribute="height" secondItem="b3Z-oD-yHk" secondAttribute="height" id="u7H-4E-dEE"/>
+                                    <constraint firstItem="b3Z-oD-yHk" firstAttribute="height" secondItem="IHG-5y-uhc" secondAttribute="height" id="oNg-rX-mU6"/>
+                                    <constraint firstItem="IHG-5y-uhc" firstAttribute="height" secondItem="8KQ-jI-iTh" secondAttribute="height" multiplier="4" id="tCE-Yb-TvW"/>
                                 </constraints>
                                 <variation key="heightClass=compact-widthClass=compact" axis="horizontal"/>
                             </stackView>
@@ -102,6 +110,7 @@
                     </view>
                     <connections>
                         <outlet property="analogClock" destination="IHG-5y-uhc" id="Rnt-lg-g9u"/>
+                        <outlet property="digitalClock" destination="8KQ-jI-iTh" id="Xry-YT-Q98"/>
                         <outlet property="tempTimeDisplay" destination="hzn-GZ-WNd" id="k0D-98-ZiK"/>
                         <outlet property="tickLabel" destination="Rq3-JT-pYn" id="eTw-wD-zG2"/>
                         <outlet property="tockLable" destination="HHb-6X-b3f" id="ChU-6H-e48"/>

@@ -32,11 +32,11 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andType clockType: ClockType) {
         self.time = time
         type = clockType
-        hoursDisplay.setup(asType: clockType == .twentyFourHour ? .twentyFourHour : .hour, withTime: time)
-        minutesDisplay.setup(asType: .minute, withTime: time)
-        secondsDisplay.setup(asType: .second, withTime: time)
-        periodDisplay.setup(asType: .period, withTime: time)
-        periodDisplay.isHidden = clockType == .twentyFourHour
+        hoursDisplay?.setup(asType: clockType == .twentyFourHour ? .twentyFourHour : .hour, withTime: time)
+        minutesDisplay?.setup(asType: .minute, withTime: time)
+        secondsDisplay?.setup(asType: .second, withTime: time)
+        periodDisplay?.setup(asType: .period, withTime: time)
+        periodDisplay?.isHidden = clockType == .twentyFourHour
     }
     
     func update() {
