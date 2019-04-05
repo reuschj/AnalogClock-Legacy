@@ -36,6 +36,32 @@ class ClockHandView: UIImageView, Updatable {
         return controller.rotationRadians ?? 0
     }
     
+    // Gets/sets the height
+    var height: CGFloat {
+        get {
+            return bounds.size.height
+        }
+        set {
+            let currentHeight = bounds.size.height
+            let multiplier = currentHeight / newValue
+            let newSize: CGRect = bounds.applying(CGAffineTransform(scaleX: CGFloat(1), y: multiplier))
+            bounds = newSize
+        }
+    }
+    
+    // Gets/sets the width
+    var width: CGFloat {
+        get {
+            return bounds.size.width
+        }
+        set {
+            let currentWidth = bounds.size.width
+            let multiplier = currentWidth / newValue
+            let newSize: CGRect = bounds.applying(CGAffineTransform(scaleX: multiplier, y: CGFloat(1)))
+            bounds = newSize
+        }
+    }
+    
     // Initializer
     // Use this when you want to explicitly pass the image name
     init(withImage imageName: String, controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot) {
@@ -126,8 +152,14 @@ class ClockHandView: UIImageView, Updatable {
         setAnchor(to: CGPoint(x: 0.5, y: correctedYAnchor))
     }
     
-    func setSize(to newScale: Double = 0.85) {
-        // TODO: Do stuff here
+    // Sets scale
+    func setScale(to newScale: Double = 0.5) {
+        guard newScale >= 0 && newScale <= 1 else { return }
+//        //Backup
+//        heightAnchor.constraint(equalTo: superview!.heightAnchor, multiplier: CGFloat(newScale))
+        let superHieght = superview!.bounds.size.height
+        height = superHieght * CGFloat(newScale)
+        
     }
     
     // Looks up the clock hand image for given type and creates a UIImage instance
