@@ -47,9 +47,6 @@ class MainViewController: UIViewController, Timed, TimeAware {
         // Update the analog and digtial clocks
         analogClock.update()
         digitalClock.update()
-        
-        // Update the digital clock
-        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period?.rawValue ?? "")"
     
         let tickTock = time.tickTock
         if let tickTock = tickTock {
@@ -62,7 +59,8 @@ class MainViewController: UIViewController, Timed, TimeAware {
                 tockLable.text = tickTock.rawValue
             }
         }
-        tempTimeDisplay.text = testTimeReadout
+        
+        let testTimeReadout = "\(time.hour12 ?? 0):\(time.paddedMinute ?? "00"):\(time.paddedSecond ?? "00") \(time.period?.rawValue ?? "")"
         print(testTimeReadout)
         print(tickTock ?? "")
     }
@@ -72,7 +70,7 @@ class MainViewController: UIViewController, Timed, TimeAware {
         super.viewDidLoad()
         
         // Initialize the analog clock and digital clock displays
-        analogClock.setup(withTime: time) // TODO: Add passing type to analog clock
+        analogClock.setup(withTime: time, andType: type)
         digitalClock.setup(withTime: time, andType: type)
         
         startTimer()

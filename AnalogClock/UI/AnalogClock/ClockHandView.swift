@@ -126,6 +126,10 @@ class ClockHandView: UIImageView, Updatable {
         setAnchor(to: CGPoint(x: 0.5, y: correctedYAnchor))
     }
     
+    func setSize(to newScale: Double = 0.85) {
+        // TODO: Do stuff here
+    }
+    
     // Looks up the clock hand image for given type and creates a UIImage instance
     static func getClockHandImage(withType type: ClockHandType) -> UIImage? {
         guard let imageName = clockHandImageName[type] else { return nil }

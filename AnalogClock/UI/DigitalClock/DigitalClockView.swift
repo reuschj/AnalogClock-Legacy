@@ -17,7 +17,7 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     // This will keep the current time, updated every second
     var time: CurrentTimeAndDate!
     
-    
+    // Sets type as 12-hour clock or 24-hour clock
     var type: ClockType!
     
     // The stack view of all time idcomponents
@@ -32,10 +32,19 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andType clockType: ClockType) {
         self.time = time
         type = clockType
-        hoursDisplay?.setup(asType: clockType == .twentyFourHour ? .twentyFourHour : .hour, withTime: time)
+        setDigitalDisplay()
+    }
+    
+    func setDigitalDisplay() {
+        guard let time = time else { return }
+        guard let clockType = type else { return }
+        let hourDisplayType: ClockHandType = clockType == .twentyFourHour ? .twentyFourHour : .hour
+        hoursDisplay?.text = "02"
+        hoursDisplay?.setText("03")
+        hoursDisplay?.setup(asType: hourDisplayType, withTime: time)
         minutesDisplay?.setup(asType: .minute, withTime: time)
         secondsDisplay?.setup(asType: .second, withTime: time)
-        periodDisplay?.setup(asType: .period, withTime: time)
+        periodDisplay?.setup(asType: .period, withTime: time, width: CGFloat(40), height: CGFloat(30))
         periodDisplay?.isHidden = clockType == .twentyFourHour
     }
     
@@ -44,14 +53,6 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
         minutesDisplay?.update()
         secondsDisplay?.update()
         periodDisplay?.update()
-    }
-    
-    func setPeriodDisplayConstraints() {
-        periodDisplay.widthAnchor.constraint(equalToConstant: 48)
-    }
-    
-    func showPeriodDisplay(visible: Bool = true) {
-        
     }
     
     // Prepares the receiver for service after it has been loaded from an Interface Builder archive, or nib file.

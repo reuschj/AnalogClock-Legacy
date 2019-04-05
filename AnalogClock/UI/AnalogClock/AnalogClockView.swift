@@ -17,6 +17,9 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
     // This will keep the current time, updated every second
     var time: CurrentTimeAndDate!
     
+    // Sets type as 12-hour clock or 24-hour clock
+    var type: ClockType!
+    
     // Clock hands
     @IBOutlet weak var hourHand: ClockHandView!
     @IBOutlet weak var minuteHand: ClockHandView!
@@ -27,16 +30,23 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
     
     // Sets up time and pivot
     // Useful to call after required initializer has already run
-    func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andPivot pivot: Double = defaultClockPivot) {
+    func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andType type: ClockType = .twelveHour, andPivot pivot: Double = defaultClockPivot) {
         self.time = time
+        self.type = type
         setClockHands()
         setClockFace()
+    }
+    
+    // Sets up time and pivot with default type
+    func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andPivot pivot: Double = defaultClockPivot) {
+        setup(withTime: time, andType: .twelveHour, andPivot: pivot)
     }
     
     // Sets all three clock hand, hour, minute, second
     private func setClockHands(withPivot pivot: Double = defaultClockPivot) {
         guard let time = time else { return }
-        hourHand?.setup(withController: ClockHandController(asType: .hour, withTime: time), andPivot: pivot)
+        let hourHandType: ClockHandType = type == ClockType.twentyFourHour ? .twentyFourHour : .hour
+        hourHand?.setup(withController: ClockHandController(asType: hourHandType, withTime: time), andPivot: pivot)
         minuteHand?.setup(withController: ClockHandController(asType: .minute, withTime: time), andPivot: pivot)
         secondHand?.setup(withController: ClockHandController(asType: .second, withTime: time), andPivot: pivot)
     }
