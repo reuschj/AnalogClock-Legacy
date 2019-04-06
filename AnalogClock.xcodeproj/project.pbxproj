@@ -34,6 +34,10 @@
 		A4B82322220A8F9700161F3D /* WeekNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82321220A8F9700161F3D /* WeekNames.swift */; };
 		A4B82325220AB66B00161F3D /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82324220AB66B00161F3D /* General.swift */; };
 		A4B82329220BF13700161F3D /* ClockHandView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4B82328220BF13700161F3D /* ClockHandView.swift */; };
+		A4BE0F6722583D14004B6019 /* UIAspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE0F6622583D14004B6019 /* UIAspectRatio.swift */; };
+		A4BE0F69225843A0004B6019 /* Ratio.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE0F68225843A0004B6019 /* Ratio.swift */; };
+		A4BE0F6C2258600B004B6019 /* ClockHandDimensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE0F6B2258600B004B6019 /* ClockHandDimensions.swift */; };
+		A4BE0F6E2258627A004B6019 /* ClockDimensionSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE0F6D2258627A004B6019 /* ClockDimensionSetup.swift */; };
 		A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41452213E91300D2D277 /* ClockHandType.swift */; };
 		A4BE414A2217CDAB00D2D277 /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */; };
 		A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */; };
@@ -91,6 +95,10 @@
 		A4B82324220AB66B00161F3D /* General.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
 		A4B82326220AB84100161F3D /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A4B82328220BF13700161F3D /* ClockHandView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandView.swift; sourceTree = "<group>"; };
+		A4BE0F6622583D14004B6019 /* UIAspectRatio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAspectRatio.swift; sourceTree = "<group>"; };
+		A4BE0F68225843A0004B6019 /* Ratio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ratio.swift; sourceTree = "<group>"; };
+		A4BE0F6B2258600B004B6019 /* ClockHandDimensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandDimensions.swift; sourceTree = "<group>"; };
+		A4BE0F6D2258627A004B6019 /* ClockDimensionSetup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockDimensionSetup.swift; sourceTree = "<group>"; };
 		A4BE41452213E91300D2D277 /* ClockHandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandType.swift; sourceTree = "<group>"; };
 		A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
 		A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padTimeUnit.swift; sourceTree = "<group>"; };
@@ -139,6 +147,8 @@
 				A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */,
 				A4A47E47223A1B4F00537840 /* AnalogClockView.swift */,
 				A41552E2222B02E100D54166 /* AnalogClockLayout.xib */,
+				A4BE0F6B2258600B004B6019 /* ClockHandDimensions.swift */,
+				A4BE0F6D2258627A004B6019 /* ClockDimensionSetup.swift */,
 			);
 			path = AnalogClock;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 		A431F6BD22090BA70052C848 /* AnalogClock */ = {
 			isa = PBXGroup;
 			children = (
+				A4BE0F6A2258531D004B6019 /* Utilities */,
 				A431F6EC220967B40052C848 /* Definitions */,
 				A4B82327220BF11500161F3D /* UI */,
 				A431F6BE22090BA70052C848 /* AppDelegate.swift */,
@@ -251,12 +262,29 @@
 		A4B82327220BF11500161F3D /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A4BE0F6522583CE5004B6019 /* General */,
 				A495AC63223E1A45007C86CB /* DigitalClock */,
 				A41552E72232374000D54166 /* Protocols */,
 				A41552E4222F989A00D54166 /* AnalogClock */,
 				A41552E02227BA7E00D54166 /* constants.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		A4BE0F6522583CE5004B6019 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE0F6622583D14004B6019 /* UIAspectRatio.swift */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
+		A4BE0F6A2258531D004B6019 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A4BE0F68225843A0004B6019 /* Ratio.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		A4BE414B2217D3D500D2D277 /* Utilities */ = {
@@ -416,6 +444,7 @@
 				A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */,
 				A431F6C122090BA70052C848 /* MainViewController.swift in Sources */,
 				A41552DD2227A4B200D54166 /* UpdatableClock.swift in Sources */,
+				A4BE0F6C2258600B004B6019 /* ClockHandDimensions.swift in Sources */,
 				A4A47E48223A1B4F00537840 /* AnalogClockView.swift in Sources */,
 				A495AC67223F745D007C86CB /* ClockType.swift in Sources */,
 				A4B82329220BF13700161F3D /* ClockHandView.swift in Sources */,
@@ -423,8 +452,10 @@
 				A4BE414A2217CDAB00D2D277 /* ClockFaceView.swift in Sources */,
 				A431F6EE220967E80052C848 /* ClockHandController.swift in Sources */,
 				A4B8231D220A5A2600161F3D /* CurrentTimeAndDate.swift in Sources */,
+				A4BE0F6722583D14004B6019 /* UIAspectRatio.swift in Sources */,
 				A41552DF2227A6F600D54166 /* Timed.swift in Sources */,
 				A41552DB2227A47E00D54166 /* Updatable.swift in Sources */,
+				A4BE0F6E2258627A004B6019 /* ClockDimensionSetup.swift in Sources */,
 				A495AC69223F75DD007C86CB /* Period.swift in Sources */,
 				A4B82325220AB66B00161F3D /* General.swift in Sources */,
 				A41552D922251B9200D54166 /* TimeAware.swift in Sources */,
@@ -434,6 +465,7 @@
 				A495AC65223F711C007C86CB /* DigitalClockViewController.swift in Sources */,
 				A431F6BF22090BA70052C848 /* AppDelegate.swift in Sources */,
 				A41552E12227BA7E00D54166 /* constants.swift in Sources */,
+				A4BE0F69225843A0004B6019 /* Ratio.swift in Sources */,
 				A455239C224F4AF40064BF5F /* DigitalDisplayComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

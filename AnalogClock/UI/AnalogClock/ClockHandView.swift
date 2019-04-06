@@ -62,10 +62,14 @@ class ClockHandView: UIImageView, Updatable {
         }
     }
     
+    // Stores a preferred aspect ratio to lock to (optional)
+    var aspectRatio: UIAspectRatio?
+    
     // Initializer
     // Use this when you want to explicitly pass the image name
-    init(withImage imageName: String, controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot) {
+    init(withImage imageName: String, controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot, toAspectRatio aspectRatio: UIAspectRatio? = nil) {
         self.controller = controller
+        self.aspectRatio = aspectRatio
         let image = UIImage(named: imageName)
         super.init(image: image)
         setClockHandPivot(to: pivot)
@@ -73,16 +77,18 @@ class ClockHandView: UIImageView, Updatable {
     
     // Initializer
     // Use this when you want the image auto-set by lookup
-    init(controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot) {
+    init(controlledBy controller: ClockHandController, withPivot pivot: Double = defaultClockPivot, toAspectRatio aspectRatio: UIAspectRatio? = nil) {
         self.controller = controller
+        self.aspectRatio = aspectRatio
         let image = ClockHandView.getClockHandImage(withType: controller.type)
         super.init(image: image)
         setClockHandPivot(to: pivot)
     }
     
     // Use this when you want the image auto-set by lookup
-    init(asType type: ClockHandType, withTime time: CurrentTimeAndDate, withPivot pivot: Double = defaultClockPivot) {
+    init(asType type: ClockHandType, withTime time: CurrentTimeAndDate, withPivot pivot: Double = defaultClockPivot, toAspectRatio aspectRatio: UIAspectRatio? = nil) {
         self.controller = ClockHandController(asType: type, withTime: time)
+        self.aspectRatio = aspectRatio
         let image = ClockHandView.getClockHandImage(withType: type)
         super.init(image: image)
         setClockHandPivot(to: pivot)
@@ -91,11 +97,13 @@ class ClockHandView: UIImageView, Updatable {
     // Required initializer
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        self.aspectRatio = nil
         setClockHandPivot(to: defaultClockPivot)
     }
     
-    func setup(withController controller: ClockHandController, andPivot pivot: Double = defaultClockPivot) {
+    func setup(withController controller: ClockHandController, andPivot pivot: Double = defaultClockPivot, toAspectRatio aspectRatio: UIAspectRatio? = nil) {
         self.controller = controller
+        self.aspectRatio = aspectRatio
         setClockHandPivot(to: pivot)
     }
     
@@ -155,11 +163,13 @@ class ClockHandView: UIImageView, Updatable {
     // Sets scale
     func setScale(to newScale: Double = 0.5) {
         guard newScale >= 0 && newScale <= 1 else { return }
-//        //Backup
+//        Backup
 //        heightAnchor.constraint(equalTo: superview!.heightAnchor, multiplier: CGFloat(newScale))
         let superHieght = superview!.bounds.size.height
         height = superHieght * CGFloat(newScale)
-        
+        if let aspectRatio = aspectRatio {
+            width = aspectRatio.getWidth(fromHeight: height)
+        }
     }
     
     // Looks up the clock hand image for given type and creates a UIImage instance

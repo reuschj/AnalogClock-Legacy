@@ -28,6 +28,25 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
     // Clock face
     @IBOutlet var clockFace: ClockFaceView!
     
+    static private let defaultMinuteToHourHandRatio: Double = 2
+    static private let defaultMinuteToSecondHandRatio: Double = 1
+    static private let defaultMinuteHandScale: Double = 0.5
+    static private var defaultSecondHandScale: Double {
+        return defaultMinuteHandScale / defaultMinuteToSecondHandRatio
+    }
+    static private var defaultHourHandScale: Double {
+        return defaultMinuteHandScale / defaultMinuteToHourHandRatio
+    }
+    static private var defaultHandPivot: Double { return defaultClockPivot }
+    static private var defaultClockDimensionSetup: ClockDimensionSetup {
+        let hourHandRatio = UIAspectRatio(width: 76, height: 85)
+        let longHandRatio = UIAspectRatio(width: 32, height: 55)
+        let hourHandDimensions = ClockHandDimensions(scale: AnalogClockView.defaultHourHandScale, pivot: AnalogClockView.defaultHandPivot, aspectRatio: hourHandRatio)
+        let minuteHandDimensions = ClockHandDimensions(scale: AnalogClockView.defaultMinuteHandScale, pivot: AnalogClockView.defaultHandPivot, aspectRatio: longHandRatio)
+        let secondHandDimensions = ClockHandDimensions(scale: AnalogClockView.defaultSecondHandScale, pivot: AnalogClockView.defaultHandPivot, aspectRatio: longHandRatio)
+        return ClockDimensionSetup(hour: hourHandDimensions, minute: minuteHandDimensions, second: secondHandDimensions)
+    }
+    
     // Sets up time and pivot
     // Useful to call after required initializer has already run
     func setup(withTime time: CurrentTimeAndDate = CurrentTimeAndDate(), andType type: ClockType = .twelveHour, andPivot pivot: Double = defaultClockPivot) {
@@ -45,10 +64,16 @@ class AnalogClockView: UIView, UpdatableClock, ReusableView {
     // Sets all three clock hand, hour, minute, second
     private func setClockHands(withPivot pivot: Double = defaultClockPivot) {
         guard let time = time else { return }
+        let hourHandRatio = UIAspectRatio(width: 76, height: 85)
+        let longHandRatio = UIAspectRatio(width: 32, height: 55)
+        // TODO: Setup with setup objects
         let hourHandType: ClockHandType = type == ClockType.twentyFourHour ? .twentyFourHour : .hour
-        hourHand?.setup(withController: ClockHandController(asType: hourHandType, withTime: time), andPivot: pivot)
-        minuteHand?.setup(withController: ClockHandController(asType: .minute, withTime: time), andPivot: pivot)
-        secondHand?.setup(withController: ClockHandController(asType: .second, withTime: time), andPivot: pivot)
+        hourHand?.setup(withController: ClockHandController(asType: hourHandType, withTime: time), andPivot: pivot, toAspectRatio: hourHandRatio)
+        minuteHand?.setup(withController: ClockHandController(asType: .minute, withTime: time), andPivot: pivot, toAspectRatio: longHandRatio)
+        secondHand?.setup(withController: ClockHandController(asType: .second, withTime: time), andPivot: pivot, toAspectRatio: longHandRatio)
+        hourHand?.setScale(to: 0.3)
+        minuteHand?.setScale(to: 0.5)
+        secondHand?.setScale(to: 0.5)
     }
     
     // Sets the clock face image
