@@ -8,36 +8,32 @@
 
 import Foundation
 
-// TODO: Make generic
-
-// Find the greatest common devisor of integers
-func findGCD(of a: Int, and b: Int) -> Int {
-    let remainder = abs(a) % abs(b)
+func findGCD<T>(ofIntegers a: T, and b: T) -> T where T: SignedInteger {
+    let remainder: T = a % b
     if remainder != 0 {
-        return findGCD(of: abs(b), and: remainder)
+        return findGCD(ofIntegers: abs(b), and: remainder)
     } else {
         return abs(b)
     }
 }
 
-// Find the greatest common devisor of doubles
-func findGCD(of a: Double, and b: Double) -> Double {
-    let remainder = abs(a).truncatingRemainder(dividingBy: abs(b))
+func findGCD<T>(ofFloatingPoints a: T, and b: T) -> T where T: FloatingPoint {
+    let remainder: T = a.truncatingRemainder(dividingBy: b)
     if remainder != 0 {
-        return findGCD(of: abs(b), and: remainder)
+        return findGCD(ofFloatingPoints: abs(b), and: remainder)
     } else {
         return abs(b)
     }
 }
 
-// Reduces the ratio of two integers
-func reduceRatio(of a: Int, and b: Int) -> (a: Int, b: Int) {
-    let gcd: Int = findGCD(of: a, and: b)
+// Reduces the ratio of two numbers
+func reduceRatio<T>(ofIntegers a: T, and b: T) -> (a: T, b: T) where T: SignedInteger {
+    let gcd: T = findGCD(ofIntegers: a, and: b)
     return (a / gcd, b / gcd)
 }
 
-// Reduces the ratio of two doubles
-func reduceRatio(of a: Double, and b: Double) -> (a: Double, b: Double) {
-    let gcd: Double = findGCD(of: a, and: b)
+// Reduces the ratio of two numbers
+func reduceRatio<T>(ofFloatingPoints a: T, and b: T) -> (a: T, b: T) where T: FloatingPoint {
+    let gcd: T = findGCD(ofFloatingPoints: a, and: b)
     return (a / gcd, b / gcd)
 }

@@ -8,10 +8,12 @@
 
 import UIKit
 
+typealias WidthHeightRatio = (width: CGFloat, height: CGFloat)
+
 // Holds an aspect ratio to use for UI elements
 struct UIAspectRatio: CustomStringConvertible {
     
-    var ratio: (width: CGFloat, height: CGFloat)
+    var ratio: WidthHeightRatio
     
     var description: String {
         return "\(ratio.width) : \(ratio.height) (width : height)"
@@ -28,15 +30,17 @@ struct UIAspectRatio: CustomStringConvertible {
     // Initializers
     
     init(width: CGFloat, height: CGFloat) {
-        ratio = (width, height)
+        ratio = reduceRatio(ofFloatingPoints: width, and: height) as! WidthHeightRatio
     }
     
     init(width: Double, height: Double) {
-        ratio = (CGFloat(width), CGFloat(height))
+        let reducedRatio = reduceRatio(ofFloatingPoints: width, and: height)
+        ratio = (CGFloat(reducedRatio.a), CGFloat(reducedRatio.b))
     }
     
     init(width: Int, height: Int) {
-        ratio = (CGFloat(width), CGFloat(height))
+        let reducedRatio = reduceRatio(ofIntegers: width, and: height)
+        ratio = (CGFloat(reducedRatio.a), CGFloat(reducedRatio.b))
     }
     
     // Get a width from known height

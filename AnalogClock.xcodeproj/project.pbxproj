@@ -41,6 +41,7 @@
 		A4BE41462213E91300D2D277 /* ClockHandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41452213E91300D2D277 /* ClockHandType.swift */; };
 		A4BE414A2217CDAB00D2D277 /* ClockFaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */; };
 		A4BE414D2217D3F800D2D277 /* padTimeUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */; };
+		A4D3E29E2279577C00C67D8D /* AppStateCocoaTouch.xcodeproj in Frameworks */ = {isa = PBXBuildFile; fileRef = A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = A431F6BA22090BA70052C848;
 			remoteInfo = AnalogClock;
+		};
+		A4D3E29A227956D100C67D8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A4D3E2702279545000C67D8D;
+			remoteInfo = AppStateCocoaTouch;
+		};
+		A4D3E29C227956D100C67D8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A4D3E2792279545000C67D8D;
+			remoteInfo = AppStateCocoaTouchTests;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -102,6 +117,7 @@
 		A4BE41452213E91300D2D277 /* ClockHandType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockHandType.swift; sourceTree = "<group>"; };
 		A4BE41492217CDAB00D2D277 /* ClockFaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockFaceView.swift; sourceTree = "<group>"; };
 		A4BE414C2217D3F800D2D277 /* padTimeUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padTimeUnit.swift; sourceTree = "<group>"; };
+		A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppStateCocoaTouch.xcodeproj; path = ../../AppStateCocoaTouch/AppStateCocoaTouch.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4D3E29E2279577C00C67D8D /* AppStateCocoaTouch.xcodeproj in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +186,7 @@
 				A431F6D222090BA90052C848 /* AnalogClockTests */,
 				A431F6DD22090BA90052C848 /* AnalogClockUITests */,
 				A431F6BC22090BA70052C848 /* Products */,
+				A4D3E294227956D100C67D8D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -304,6 +322,23 @@
 			path = ClockHandController;
 			sourceTree = "<group>";
 		};
+		A4D3E294227956D100C67D8D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A4D3E296227956D100C67D8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A4D3E29B227956D100C67D8D /* AppStateCocoaTouch.framework */,
+				A4D3E29D227956D100C67D8D /* AppStateCocoaTouchTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -397,6 +432,12 @@
 			mainGroup = A431F6B222090BA70052C848;
 			productRefGroup = A431F6BC22090BA70052C848 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = A4D3E296227956D100C67D8D /* Products */;
+					ProjectRef = A4D3E295227956D100C67D8D /* AppStateCocoaTouch.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				A431F6BA22090BA70052C848 /* AnalogClock */,
@@ -405,6 +446,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		A4D3E29B227956D100C67D8D /* AppStateCocoaTouch.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = AppStateCocoaTouch.framework;
+			remoteRef = A4D3E29A227956D100C67D8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		A4D3E29D227956D100C67D8D /* AppStateCocoaTouchTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AppStateCocoaTouchTests.xctest;
+			remoteRef = A4D3E29C227956D100C67D8D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		A431F6B922090BA70052C848 /* Resources */ = {
