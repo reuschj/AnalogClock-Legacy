@@ -13,9 +13,6 @@ class MainViewController: UIViewController, Timed, TimeAware {
     // This will keep the current time, updated every second
     let time: CurrentTimeAndDate! = CurrentTimeAndDate()
     
-    // Clock type can be 12 or 24 hour
-    var type: ClockType = .twelveHour
-    
     // This timer is for the view controller. It fires every second to check the current time
     var timer: Timer!
     
@@ -69,6 +66,9 @@ class MainViewController: UIViewController, Timed, TimeAware {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Get clock type from app settings
+        let type = App.settings.clockType
+        
         // Initialize the analog clock and digital clock displays
         analogClock.setup(withTime: time, andType: type)
         digitalClock.setup(withTime: time, andType: type)
@@ -76,8 +76,5 @@ class MainViewController: UIViewController, Timed, TimeAware {
         startTimer()
         
     }
-        
-
-
 }
 

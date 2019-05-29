@@ -29,17 +29,17 @@ struct UIAspectRatio: CustomStringConvertible {
     
     // Initializers
     
-    init(width: CGFloat, height: CGFloat) {
-        ratio = reduceRatio(ofFloatingPoints: width, and: height) as! WidthHeightRatio
+    init(w: CGFloat, h: CGFloat) {
+        ratio = reduceRatio(ofFloatingPoints: w, and: h) as! WidthHeightRatio
     }
     
-    init(width: Double, height: Double) {
-        let reducedRatio = reduceRatio(ofFloatingPoints: width, and: height)
+    init(w: Double, h: Double) {
+        let reducedRatio = reduceRatio(ofFloatingPoints: w, and: h)
         ratio = (CGFloat(reducedRatio.a), CGFloat(reducedRatio.b))
     }
     
-    init(width: Int, height: Int) {
-        let reducedRatio = reduceRatio(ofIntegers: width, and: height)
+    init(w: Int, h: Int) {
+        let reducedRatio = reduceRatio(ofIntegers: w, and: h)
         ratio = (CGFloat(reducedRatio.a), CGFloat(reducedRatio.b))
     }
     

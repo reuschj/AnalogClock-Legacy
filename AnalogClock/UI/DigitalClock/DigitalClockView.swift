@@ -18,7 +18,7 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     var time: CurrentTimeAndDate!
     
     // Sets type as 12-hour clock or 24-hour clock
-    var type: ClockType!
+    var type: ClockType = App.settings.clockType
     
     // The stack view of all time idcomponents
     @IBOutlet weak var timeDisplay: UIStackView!
@@ -37,15 +37,14 @@ class DigitalClockView: UIView, UpdatableClock, ReusableView {
     
     func setDigitalDisplay() {
         guard let time = time else { return }
-        guard let clockType = type else { return }
-        let hourDisplayType: ClockHandType = clockType == .twentyFourHour ? .twentyFourHour : .hour
+        let hourDisplayType: ClockHandType = type == .twentyFourHour ? .twentyFourHour : .hour
         hoursDisplay?.text = "02"
         hoursDisplay?.setText("03")
         hoursDisplay?.setup(asType: hourDisplayType, withTime: time)
         minutesDisplay?.setup(asType: .minute, withTime: time)
         secondsDisplay?.setup(asType: .second, withTime: time)
         periodDisplay?.setup(asType: .period, withTime: time, width: CGFloat(40), height: CGFloat(30))
-        periodDisplay?.isHidden = clockType == .twentyFourHour
+        periodDisplay?.isHidden = type == .twentyFourHour
     }
     
     func update() {
